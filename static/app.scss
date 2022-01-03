@@ -1,0 +1,38 @@
+:root {
+    --home-primary: #bbb;
+    --about-primary: #ae946d;
+    --about-primary-hover: #d79c45;
+    --about-secondary: #000;
+    --statics-primary: #900;
+    --statics-primary-hover: #880000;
+    --statics-secondary: #000;
+    --misc-primary: #172;
+    --misc-primary-hover: #09801c;
+    --misc-secondary: #000;
+    --water-primary: #0af;
+    --water-secondary: #000;
+    --strength-primary: #e70;
+    --strength-secondary: #000;
+    --li-hover-border: red;
+    --sub-ul: #aaa;
+    --sub-ul-hover: #777;
+    --page-background: white;
+    --link-text: white;
+    --link-text-hover: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+    font-size: clamp(14px, 1.75vw, 24px);
+    box-sizing: border-box;
+}
+*:after,
+*:before {
+    box-sizing: inherit;
+}
