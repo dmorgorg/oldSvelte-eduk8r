@@ -36,7 +36,7 @@
 			</ul>
 		</li>
 		<li class="water">
-			<a href="/water">Fluid/Water</a>
+			<a href="/water">Fluids/Water</a>
 			<ul>
 				<li><a href="/water/guided"><s>Guided Practice</s></a></li>
 				<li>

@@ -4,7 +4,7 @@
 			<a href="/about">About</a>
 		</li>
 		<li class="statics">
-			<a href="/statics">Structural Statics</a>
+			<a href="/statics">Statics</a>
 			<!-- Structural Statics -->
 			<ul>
 				<li>
@@ -43,7 +43,7 @@
 		</li>
 
 		<li class="strength">
-			<a href="/strength"><s>Strength of Materials</s></a>
+			<a href="/strength"><s>Strength</s></a>
 			<ul>
 				<li><a href="/strength/guided"><s>Guided Practice</s></a></li>
 				<li><a href="/strength/tables"><s>Tables & Formul&aelig;</s></a></li>
@@ -51,7 +51,7 @@
 		</li>
 
 		<li class="water">
-			<a href="/water">Fluid Mechanics & Water Resources</a>
+			<a href="/water">Fluids/Water</a>
 			<ul>
 				<li><a href="/water/guided"><s>Guided Practice</s></a></li>
 				<li>
@@ -91,48 +91,9 @@
 </nav>
 
 <style>
-	:global(:root) {
-		--home-primary: #bbb;
-		--about-primary: #ae946d;
-		--about-primary-hover: #d79c45;
-		--about-secondary: #000;
-		--statics-primary: #900;
-		--statics-primary-hover: #880000;
-		--statics-secondary: #000;
-		--misc-primary: #172;
-		--misc-primary-hover: #09801c;
-		--misc-secondary: #000;
-		--water-primary: #0af;
-		--water-secondary: #000;
-		--strength-primary: #e70;
-		--strength-secondary: #000;
-		--li-hover-border: red;
-		--sub-ul: #aaa;
-		--sub-ul-hover: #777;
-		--page-background: white;
-		--link-text: white;
-		--link-text-hover: black;
-	}
+	
 
-	:global(body) {
-		margin: 0;
-		padding: 0;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		/* font-family: "Happy Monkey", cursive; */
-		font-size: clamp(12px, 1.3vw, 24px);
-		box-sizing: border-box;
-	}
-	:global(*:after, *:before) {
-		box-sizing: inherit;
-	}
 
-	:global(.katex) {
-		font-size: 110%;
-		/* color: red; */
-	}
-	/* s {
-		color: white;
-	} */
 	nav {
 		width: 80%;
 		margin: 0 13% auto auto;
