@@ -63,10 +63,11 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 	}
 		
 	.proof,
-	.solution {
+	.solution,
+	.remark {
 		font-family: 'Alegreya SC', serif;
 		text-transform: capitalize;
-		font-weight: bold;
+		/* font-weight: bold; */
 		font-size: 1.1em;
 	}
 	.proof::before {
@@ -75,8 +76,12 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 	.solution::before {
 		content: 'Solution: ';
 	}
+	.remark::before {
+		content: 'Remark: ';
+	}
 	.proof .content,
-	.solution .content {
+	.solution .content,
+	.remark .content {
 		font-style: normal;
 		font-size: 1rem;
 		font-weight: normal;
@@ -88,6 +93,9 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 	.title {
 		font-weight: bold;
 		color: var(--text-primary);
+	}
+	div {
+		margin: 1em 0;
 	}
 
 	.home {

@@ -40,33 +40,7 @@
 		<p>Thus, <Ki>\mathbb\[Z\]</Ki> and <Ki>\mathbb\[N\]</Ki> are <strong>closed</strong> under the operations of addition and multiplication. (That means that the additive result and the multiplicative result for all elements in the sets are themselves contained in the corresponding <Ki>\mathbb\[Z\]</Ki> or <Ki>\mathbb\[N\]</Ki>.)</p>
 	</Card>
 
-	<Card>		
-		<p>For all <Ki>a, b, c \in \mathbb\[Z\] \textsf\[ or \]\mathbb\[N\]</Ki>, the following are true:</p>
-
-		<ol>
-			<li>Commutativity
-				<Kd>
-					\begin\[aligned\]
-						a+b &= b+a \\
-						a\cdot b &= b\cdot a 
-					\end\[aligned\]
-				</Kd>
-			</li>
-			<li>Associativity
-				<Kd>
-					\begin\[aligned\]
-						\lparen a+b \rparen +c &= a+\lparen b+c \rparen \\
-						\lparen a\cdot b\rparen\cdot c &= a\cdot \lparen b \cdot c \rparen 
-					\end\[aligned\]
-				</Kd>
-			</li>
-			<li>Distributivity
-				<Kd>
-					a\cdot\lparen b+c\rparen = a\cdot b + a\cdot c
-				</Kd>
-			</li>
-		</ol> 		
-	</Card>	
+	
 
 	<Sect>Subtraction and Division</Sect>
 
@@ -98,37 +72,7 @@
 		</Kd>
 	</Card>
 
-	<Sect>Three Principles</Sect>
-
-	<Card>
-		<p><strong>The Well Ordering Principle</strong>:</p>
-
-		<p class="center">Every non-empty set of positive integers has a least element.</p>
-
-		<p>(<Ki>\mathbb\[N\]</Ki> is well-ordered but <Ki>\mathbb\[Z\]</Ki> is not.)</p>
-
-		<p>This principle is taken as an axiom and is not proved.</p>
-	</Card>
-
-	<Card>
-		<p><strong>The Pigeonhole Principle</strong>:</p>
-
-		<p class="center">If <Ki>s</Ki> objects are placed in <Ki>k</Ki> boxes, with <Ki>s>k</Ki>, then at least one box must contain more than one object.</p>
-
-		<Env type='proof'> We prove by contradiction. Suppose that each box contains one object. Then there are at most <Ki>k</Ki> objects. But there are <Ki>s>k</Ki> objects, so there is a contradiction and each box cannot contain at most one object.</Env>
-
-	</Card>
-
-	<Card>
-		<p><strong>The First (or Weak) Principle of Mathematical Induction</strong>:</p>
-
-		 <p>If a set of positive integers has the property that, when it contains the integer <Ki>\[k,\]</Ki> it must also contain <Ki>k+1</Ki>, and if this set also contains <Ki>1</Ki>, then it must be the set of all positive integers. </p>
-
-		<p>In other words, a property concerning the positive integers that is true for <Ki>\[n=1,\]</Ki> and is true for the integer <Ki>n+1</Ki> whenever it is true for integer <Ki>n</Ki>, must be true for all positive integers.</p>
-
-		<Env type='proof'> Let <Ki>S</Ki> be the set of positive integers that contains <Ki>1</Ki> and also contains <Ki>k+1</Ki> whenever it contains <Ki>k</Ki>. Furthermore, assume that <Ki>S</Ki> is <strong>not</strong> the set of all positive numbers. It follows that there must be some positive integers that are not in <Ki>S</Ki>, and these integers must have a least element, <Ki>\alpha</Ki> say (from the Well-Ordering Principle). Then, <Ki>\alpha \ne 1</Ki> since <Ki>1 \in S</Ki>. <Ki>\alpha</Ki> is the least member not in <Ki>S</Ki> so <Ki>\alpha-1 \in S</Ki>. But, if <Ki>\alpha-1 \in S</Ki>, then <Ki>\alpha \in S</Ki> and there is a contradiction. Therefore, our assumption that <Ki>S</Ki> is not the set of all positive numbers must be false.</Env> 
-
-	</Card>
+	
 
 	<Sect>Induction Examples</Sect> -->
 
@@ -286,12 +230,12 @@
 
 	<Sect type='chapter'>Getting Started</Sect>
 
-	<p></p>
+	<!-- <p></p>
 
-	<Sect type='section'>Ground Rules</Sect>
+	<Sect type='section'>Ground Rules</Sect> -->
 
 	<Card>
-		<p>The numbers we use for counting <Ki>(0, 1, 2, 3, \ldots)</Ki> are known by mathematicians as the <strong>natural numbers</strong>. (Many do not include <Ki>0</Ki> in the natural numbers but we shall.)</p>
+		<p>The numbers we use for counting <Ki>(1, 2, 3, \ldots)</Ki> are known by mathematicians as the <strong>natural numbers</strong>. (Some include <Ki>0</Ki> in the natural numbers but we shall not.)</p>
 
 		<p>If we have <Ki>3</Ki> (a natural number) rabbits and then obtain <Ki>5</Ki> (a natural number) more, we have a total of <Ki>8</Ki> <Ki>(=3+5)</Ki> rabbits. <Ki>8</Ki> is also a natural number.</p> 
 		
@@ -299,7 +243,7 @@
 
 		<p>The set of all natural numbers is denoted by <Ki>\mathbb\[N\]</Ki> so that we write:</p>
 
-		<Kd>\mathbb\[N\]=\lbrace 0,1,2,3,\ldots \rbrace</Kd>
+		<Kd>\mathbb\[N\]=\lbrace 1,2,3,\ldots \rbrace</Kd>
 
 		<p>The 'curly braces,' <Ki>\lbrace \text\[ and \] \rbrace</Ki>, are notation for a set. We shall investigate sets in detail later but for now you can think of it as a collection of elements where order is unimportant and there are no duplicates. (We could rearrange the order of the elements in <Ki>\mathbb\[N\]</Ki> as long as none is omitted. But we don't generally do this!)</p>
 		
@@ -315,7 +259,7 @@
 	</Card>
 
 	<Card>
-		<p>If we include the negative numbers (the additive inverses of the natural numbers), we get the set of all integers:</p>
+		<p>If we include the negative numbers (the additive inverses of the natural numbers) and <Ki>0</Ki>, we get the set of all integers:</p>
 
 		<Kd>\mathbb\[Z\]=\lbrace \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \rbrace</Kd>
 
@@ -328,8 +272,101 @@
 		<p>"For all <Ki>a</Ki> and <Ki>b</Ki> in <Ki>\mathbb\[N\]</Ki>, their product <Ki>a</Ki> times <Ki>b</Ki> is in <Ki>\mathbb\[N\]</Ki>"</p>
 	</Card>
 
+	<Card>		
+		<p>For all <Ki>a, b, c \in \Z \textsf\[ or \]\N</Ki>, the following are true:</p>
+
+		<ol>
+			<li>Commutativity
+				<Kd>
+					\begin\[aligned\]
+						a+b &= b+a \\
+						a\cdot b &= b\cdot a 
+					\end\[aligned\]
+				</Kd>
+			</li>
+			<li>Associativity
+				<Kd>
+					\begin\[aligned\]
+						\lparen a+b \rparen +c &= a+\lparen b+c \rparen \\
+						\lparen a\cdot b\rparen\cdot c &= a\cdot \lparen b \cdot c \rparen 
+					\end\[aligned\]
+				</Kd>
+			</li>
+			<li>Distributivity
+				<Kd>
+					a\cdot\lparen b+c\rparen = a\cdot b + a\cdot c
+				</Kd>
+			</li>
+		</ol> 		
+	</Card>	
+
+	<Sect>Three Important Principles</Sect>
+
 	<Card>
-		<p><Env type='theorem' title='Division with Remainder'></Env></p>
+		
+		<Env type='theorem' title='The Well-Ordering Principle'>
+			Let <Ki>X \subset \N</Ki> be non-empty. Then there exists <Ki> a\in X</Ki> such that <Ki> a\le x</Ki> for every <Ki> \[x\in X\]</Ki>.
+		</Env>		
+
+		<p>"Let <Ki>X</Ki> be a non-empty subset of <Ki>X</Ki>. Then, there exists <Ki>a</Ki> in <Ki>X</Ki> such that <Ki>a</Ki> is less than or equal to <Ki>x</Ki> for every <Ki>x</Ki> in <Ki>X</Ki>."</p>
+
+		<Env type='remark'>In other words, every non-empty set of positive integers has a least element.</Env>
+
+		<Env type='proof'>
+			Let <Ki>X \subset \N</Ki> and assume that <Ki>X</Ki> has no smallest element. We prove that <Ki>X</Ki> is empty. (Thus, if <Ki>X</Ki> is non-empty, it must have a smallest element.) Let
+			<Kd>S=\lbrace n\in\N\mid n\lt x\textit\[ for every \]x\in X\rbrace</Kd>
+			Since all elements of <Ki>S</Ki> are less than the elements of <Ki>X</Ki>, they can have no elements in common, that is <Ki>S \cap X = \phi</Ki>. <Ki>0</Ki> is less than or equal to any element in <Ki>\N</Ki> and so less than or equal to any element of <Ki>X</Ki>. <Ki>X</Ki> has no least element so <Ki>0 \notin X</Ki> so <Ki>0\lt x</Ki> for every <Ki>x\in X</Ki>. Therefore, <Ki>0\in S</Ki>.
+
+			
+		</Env>
+
+		<Env type='remark'>
+			This is an example of proof by <strong>contrapositive</strong>. By assuming <Ki>X</Ki> has no smallest element, we found <Ki>X</Ki> empty. Thus, the only way that <Ki>X</Ki> can be non-empty is if <Ki>X</Ki> has a smallest element. In order to show that <Ki>A</Ki> implies <Ki>B</Ki> using a contrapositive proof, we show that not <Ki>B</Ki> implies not <Ki>A</Ki>.
+		</Env>
+		
+
+		<p>(<Ki>\mathbb\[N\]</Ki> is well-ordered but <Ki>\mathbb\[Z\]</Ki> is not.)</p>
+
+		
+	</Card>
+
+	<Card>
+		<p><strong>The Pigeonhole Principle</strong>:</p>
+
+		<p class="center">If <Ki>s</Ki> objects are placed in <Ki>k</Ki> boxes, with <Ki>s>k</Ki>, then at least one box must contain more than one object.</p>
+
+		<Env type='proof'> We prove by contradiction. Suppose that each box contains one object. Then there are at most <Ki>k</Ki> objects. But there are <Ki>s>k</Ki> objects, so there is a contradiction and each box cannot contain at most one object.</Env>
+
+	</Card>
+
+	<Card>
+		<p><strong>The First (or Weak) Principle of Mathematical Induction</strong>:</p>
+
+		 <p>If a set of positive integers has the property that, when it contains the integer <Ki>\[k,\]</Ki> it must also contain <Ki>k+1</Ki>, and if this set also contains <Ki>1</Ki>, then it must be the set of all positive integers. </p>
+
+		<p>In other words, a property concerning the positive integers that is true for <Ki>\[n=1,\]</Ki> and is true for the integer <Ki>n+1</Ki> whenever it is true for integer <Ki>n</Ki>, must be true for all positive integers.</p>
+
+		<Env type='proof'> Let <Ki>S</Ki> be the set of positive integers that contains <Ki>1</Ki> and also contains <Ki>k+1</Ki> whenever it contains <Ki>k</Ki>. Furthermore, assume that <Ki>S</Ki> is <strong>not</strong> the set of all positive numbers. It follows that there must be some positive integers that are not in <Ki>S</Ki>, and these integers must have a least element, <Ki>\alpha</Ki> say (from the Well-Ordering Principle). Then, <Ki>\alpha \ne 1</Ki> since <Ki>1 \in S</Ki>. <Ki>\alpha</Ki> is the least member not in <Ki>S</Ki> so <Ki>\alpha-1 \in S</Ki>. But, if <Ki>\alpha-1 \in S</Ki>, then <Ki>\alpha \in S</Ki> and there is a contradiction. Therefore, our assumption that <Ki>S</Ki> is not the set of all positive numbers must be false.</Env> 
+
+	</Card>
+
+	<Card>
+		<p>
+			<Env type='theorem' title='Division with Remainder'>
+				<Kd>\forall a, b \in \mathbb\[N\], \textit\[ with \] b>0, 
+					\quad\exists\; q, r \in \mathbb\[N\]:\\ ~ \\
+					a=q(b)+r \textit\[, where \] 0\le r \lt b				
+				</Kd>			
+			</Env>
+		</p>
+
+		<p>"For all natural numbers <Ki>a</Ki> and <Ki>b</Ki>, with <Ki>b</Ki> greater than <Ki>0,</Ki> there exist natural numbers <Ki>q</Ki> and <Ki>r</Ki> such that <Ki>a</Ki> equals <Ki>q</Ki> times <Ki>b,</Ki> plus <Ki>r,</Ki> where <Ki>r</Ki> is greater than or equal to zero and less than <Ki>b</Ki>."</p>
+
+		<p>
+			<Env type='remark'>
+				<Ki>q</Ki> is known as the <strong>quotient</strong> and <Ki>r</Ki> the <strong>remainder</strong>.
+			</Env>
+		</p>
 	</Card>
 
 
