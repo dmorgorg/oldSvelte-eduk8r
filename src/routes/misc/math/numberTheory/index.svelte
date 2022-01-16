@@ -310,57 +310,67 @@
 
 		<p>"Let <Ki>X</Ki> be a non-empty subset of <Ki>X</Ki>. Then, there exists <Ki>a</Ki> in <Ki>X</Ki> such that <Ki>a</Ki> is less than or equal to <Ki>x</Ki> for every <Ki>x</Ki> in <Ki>X</Ki>."</p>
 
-		<Env type='remark'>In other words, every non-empty set of positive integers has a least element.</Env>
+		<Env type='remark'>In other words: <strong>Every non-empty set of positive integers has a least element</strong>.</Env>
 
 		<Env type='proof'>
 			Let <Ki>X \subset \N</Ki> and assume that <Ki>X</Ki> has no smallest element. We prove that <Ki>X</Ki> is empty. (Thus, if <Ki>X</Ki> is non-empty, it must have a smallest element.) Let
 			<Kd>S=\lbrace n\in\N\mid n\lt x\textit\[ for every \]x\in X\rbrace</Kd>
+
 			Since all elements of <Ki>S</Ki> are less than the elements of <Ki>X</Ki>, they can have no elements in common, that is <Ki>S \cap X = \phi</Ki>. <Ki>0</Ki> is less than or equal to any element in <Ki>\N</Ki> and so less than or equal to any element of <Ki>X</Ki>. <Ki>X</Ki> has no least element so <Ki>0 \notin X</Ki> so <Ki>0\lt x</Ki> for every <Ki>x\in X</Ki>. Therefore, <Ki>0\in S</Ki>.
 
-			
+			<p>Now, suppose <Ki>n\in S</Ki>. Then <Ki>n\lt x\;\forall x\in X</Ki> so <Ki>n+1\le x\;\forall x \in X</Ki>. So, if <Ki>n+1</Ki> were in <Ki>X</Ki>, it would be the least element of <Ki>X</Ki>. But <Ki>X</Ki> has no least element so <Ki>n+1 \notin X</Ki>. That is, <Ki>n+1 \lt x \;\forall x \in X</Ki> so <Ki>n+1 \in S</Ki>. </p>
+
+			<p>We have shown that <Ki>0\in S</Ki> and <Ki>n \in S \Rightarrow n+1 \in S, \;\forall n \in S</Ki>. It follows that <Ki>S=\N</Ki> so <Ki>X=\phi</Ki>, i.e. <Ki>X</Ki> is empty.<span class='fright'><Ki>\color\[green\]\[\blacksquare\]</Ki></span></p>
 		</Env>
 
 		<Env type='remark'>
-			This is an example of proof by <strong>contrapositive</strong>. By assuming <Ki>X</Ki> has no smallest element, we found <Ki>X</Ki> empty. Thus, the only way that <Ki>X</Ki> can be non-empty is if <Ki>X</Ki> has a smallest element. In order to show that <Ki>A</Ki> implies <Ki>B</Ki> using a contrapositive proof, we show that not <Ki>B</Ki> implies not <Ki>A</Ki>.
+			Proofs in mathematics depend upon the use of valid previously proved results. These, in turn, depend upon valid previously proved results. Going back far enough (not very far back here, in our early study of number theory) we reach a place where there are no previous results, just a few essential assumptions. These assumptions are called <strong>axioms</strong>. Peano's Axioms form the basis for the development of understanding of <Ki>\N</Ki>. The pertinent axioms for us in this proof is that, for a subset <Ki>S</Ki> of the natural numbers <Ki>\N</Ki>, if  <Ki>0\in S</Ki> and if <Ki>n\in S \Rightarrow N+1 \in S</Ki>, then <Ki>S=\N</Ki>, i.e. <Ki>S</Ki> is the set of natural numbers. Peano considered <Ki>0</Ki> to be a natural number; we, in common with most number theorists, assume that it is not. It matters not to this proof, though; simply replacing <Ki>0</Ki> above with <Ki>1</Ki> proves the theorem for our version of <Ki>\N</Ki>. 
 		</Env>
-		
 
-		<p>(<Ki>\mathbb\[N\]</Ki> is well-ordered but <Ki>\mathbb\[Z\]</Ki> is not.)</p>
+		<Env type='remark'>
+			This is an example of a <strong>contrapositive</strong> proof. By assuming <Ki>X</Ki> has no smallest element, we found <Ki>X</Ki> empty. Thus, the only way that <Ki>X</Ki> can be non-empty is if <Ki>X</Ki> has a smallest element. (That is, in order to show that <Ki>A</Ki> implies <Ki>B</Ki> using a contrapositive proof, we show that not <Ki>B</Ki> implies not <Ki>A</Ki>.)
+		</Env>		
+
+		<Env type='remark'><Ki>\Z</Ki>, having no least member, is not well-ordered.</Env>
 
 		
 	</Card>
 
 	<Card>
-		<p><strong>The Pigeonhole Principle</strong>:</p>
+		<Env type='theorem' title='The Pigeonhole Principle'>
+			If <Ki>s</Ki> objects are placed in <Ki>k</Ki> boxes, with <Ki>s>k</Ki>, then at least one box must contain more than one object.
+		</Env>		
 
-		<p class="center">If <Ki>s</Ki> objects are placed in <Ki>k</Ki> boxes, with <Ki>s>k</Ki>, then at least one box must contain more than one object.</p>
-
-		<Env type='proof'> We prove by contradiction. Suppose that each box contains one object. Then there are at most <Ki>k</Ki> objects. But there are <Ki>s>k</Ki> objects, so there is a contradiction and each box cannot contain at most one object.</Env>
+		<Env type='proof'> We prove by contradiction. Suppose that each box contains one object. Then there are at most <Ki>k</Ki> objects. But there are <Ki>s>k</Ki> objects, so there is a contradiction and each box cannot contain at most one object.<span class='fright'><Ki>\color\[green\]\[\blacksquare\]</Ki></span></Env>
 
 	</Card>
 
 	<Card>
-		<p><strong>The First (or Weak) Principle of Mathematical Induction</strong>:</p>
+		<Env type='theorem' title='The First Principle of Mathematical Induction'>
+			If a set of positive integers has the property that, when it contains the integer <Ki>\[k,\]</Ki> it must also contain <Ki>k+1</Ki>, and if this set also contains <Ki>1</Ki>, then it must be the set of all positive integers.
+		</Env>
 
-		 <p>If a set of positive integers has the property that, when it contains the integer <Ki>\[k,\]</Ki> it must also contain <Ki>k+1</Ki>, and if this set also contains <Ki>1</Ki>, then it must be the set of all positive integers. </p>
+		<Env type='remark'>
+			In other words, a property concerning the positive integers that is true for <Ki>\[n=1,\]</Ki> and is true for the integer <Ki>n+1</Ki> whenever it is true for integer <Ki>n</Ki>, must be true for all positive integers.
+		</Env>
 
-		<p>In other words, a property concerning the positive integers that is true for <Ki>\[n=1,\]</Ki> and is true for the integer <Ki>n+1</Ki> whenever it is true for integer <Ki>n</Ki>, must be true for all positive integers.</p>
-
-		<Env type='proof'> Let <Ki>S</Ki> be the set of positive integers that contains <Ki>1</Ki> and also contains <Ki>k+1</Ki> whenever it contains <Ki>k</Ki>. Furthermore, assume that <Ki>S</Ki> is <strong>not</strong> the set of all positive numbers. It follows that there must be some positive integers that are not in <Ki>S</Ki>, and these integers must have a least element, <Ki>\alpha</Ki> say (from the Well-Ordering Principle). Then, <Ki>\alpha \ne 1</Ki> since <Ki>1 \in S</Ki>. <Ki>\alpha</Ki> is the least member not in <Ki>S</Ki> so <Ki>\alpha-1 \in S</Ki>. But, if <Ki>\alpha-1 \in S</Ki>, then <Ki>\alpha \in S</Ki> and there is a contradiction. Therefore, our assumption that <Ki>S</Ki> is not the set of all positive numbers must be false.</Env> 
+		<Env type='proof'> Let <Ki>S</Ki> be the set of positive integers that contains <Ki>1</Ki> and also contains <Ki>k+1</Ki> whenever it contains <Ki>k</Ki>. Furthermore, assume that <Ki>S</Ki> is <strong>not</strong> the set of all positive numbers. It follows that there must be some positive integers that are not in <Ki>S</Ki>, and these integers must have a least element, <Ki>\alpha</Ki> say (from the Well-Ordering Principle). Then, <Ki>\alpha \ne 1</Ki> since <Ki>1 \in S</Ki>. <Ki>\alpha</Ki> is the least member not in <Ki>S</Ki> so <Ki>\alpha-1 \in S</Ki>. But, if <Ki>\[\alpha-1 \in S\]</Ki>, then <Ki>\alpha \in S</Ki> and there is a contradiction. Therefore, our assumption that <Ki>S</Ki> is not the set of all positive numbers is false. <span class='fright'><Ki>\color\[green\]\[\blacksquare\]</Ki></span></Env> 
 
 	</Card>
+
+	<Sect>Division</Sect>
 
 	<Card>
 		<p>
 			<Env type='theorem' title='Division with Remainder'>
-				<Kd>\forall a, b \in \mathbb\[N\], \textit\[ with \] b>0, 
-					\quad\exists\; q, r \in \mathbb\[N\]:\\ ~ \\
-					a=q(b)+r \textit\[, where \] 0\le r \lt b				
+				<Kd>\forall\; a, b \in \Z, \textit\[ with \] b>0, 
+					\quad\exists\; q, r \in \Z \textit\[ such that\] \\~\\
+					a=q\cdot b+r \textit\[, where \] 0\le r \lt b				
 				</Kd>			
 			</Env>
 		</p>
 
-		<p>"For all natural numbers <Ki>a</Ki> and <Ki>b</Ki>, with <Ki>b</Ki> greater than <Ki>0,</Ki> there exist natural numbers <Ki>q</Ki> and <Ki>r</Ki> such that <Ki>a</Ki> equals <Ki>q</Ki> times <Ki>b,</Ki> plus <Ki>r,</Ki> where <Ki>r</Ki> is greater than or equal to zero and less than <Ki>b</Ki>."</p>
+		<p>"For all integers <Ki>a</Ki> and <Ki>b</Ki>, with <Ki>b</Ki> greater than <Ki>0,</Ki> there exist integers <Ki>q</Ki> and <Ki>r</Ki> such that <Ki>a</Ki> equals <Ki>q</Ki> times <Ki>b,</Ki> plus <Ki>r,</Ki> where <Ki>r</Ki> is greater than or equal to zero and less than <Ki>b.</Ki>"</p>
 
 		<p>
 			<Env type='remark'>

@@ -9,13 +9,16 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
 	$: subject = nav ? pathArray[1] : 'home';
 
 	export let type = 'section';
+	export let center = false;
 </script>
 
-<header class="{type} {subject}">&nbsp;<slot /></header>
+<header class="{type} {subject}" class:center>&nbsp;<slot />&nbsp;</header>
 
 <style>
     .chapter,
-    .section {
+	.chapter0,
+    .section,
+	.section0 {
        
 		margin: 0.5em auto -0.375em -1em;
 		letter-spacing: 0.025em;
@@ -28,7 +31,8 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
     .chapter::before {
         content: 'Ch.' counter(chapter) '  '
     }
-    .section {
+    .section,
+	.section0 {
         margin: 0.75em auto -0.5em 0;
         font-size: 250%;
     }
@@ -36,6 +40,11 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
         counter-increment: section;
         content: counter(chapter)'.'counter(section)' ';
     }
+	.center {
+		margin: 0 auto;
+		text-align: center;
+		color: red;
+	}
 
 	.home {
 		color: var(--home-primary);

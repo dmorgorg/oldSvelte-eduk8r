@@ -9,7 +9,7 @@
   --misc-primary: #172;
   --misc-primary-hover: #09801c;
   --misc-secondary: #000;
-  --water-primary: #0af;
+  --water-primary: #099;
   --water-secondary: #000;
   --strength-primary: #e70;
   --strength-secondary: #000;
@@ -24,13 +24,14 @@
 
 html {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(14px, 1.875vw, 24px);
+  font-size: clamp(14px, 1.5vw, 24px);
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #eee;
 }
 
 *:after,
@@ -38,6 +39,39 @@ body {
   box-sizing: inherit;
 }
 
-.katex {
-  font-size: 0.8em;
+.fright {
+  float: right;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+main {
+  width: 95%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  main {
+    width: 85%;
+    /* background: pink; */
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    /* background: yellow; */
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 60%;
+    /* background: purple; */
+  }
 }

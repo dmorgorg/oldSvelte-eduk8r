@@ -26,6 +26,15 @@
 						<li><a href="/statics/guided/cf"><s>Complex Frames</s></a></li>
 					</ul>
 				</li>
+
+				<!-- <li>
+					<a href="/statics/vis"><s>A Course</s></a>
+					<ul>
+						<li><a href="/statics/vis/conc">Concentrated Loads </a></li>
+						<li><a href="/statics/vis/dist">Distributed Loads </a></li>
+						<li><a href="/statics/vis/moj">Method of Joints: Bridge</a></li>
+					</ul>
+				</li> -->
 			</ul>
 		</li>
 		<li class="strength">
@@ -62,7 +71,7 @@
 							<a href="/misc/math/m4cs">Math for CompSci</a>
 							<ul>
 								<li>
-									<a href="/misc/math/m4cs/induction">Induction</a>
+									<a href="/misc/math/m4cs/01proofs">Proofs</a>
 								</li>
 							</ul>
 						</li>

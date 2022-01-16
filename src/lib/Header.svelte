@@ -21,6 +21,6 @@
 	header {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 5em;
+		margin-bottom: 2em;
 	}
 </style>
