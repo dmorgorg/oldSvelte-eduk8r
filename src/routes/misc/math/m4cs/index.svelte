@@ -1,8 +1,4 @@
-<script>
-	import Ki from '$lib/katex/Ki.svelte';
-	import Kd from '$lib/katex/Kd.svelte';
-	import Card from '$lib/Card.svelte';
-</script>
+
 
 <main>
 	<header>Math for Computer Science (M4CS)</header>
@@ -28,14 +24,5 @@
 		width: 120%;
 		border: 1px solid black;
 	}
-	.subHeader {
-		margin: 0;
-		margin-bottom: -0.5em;
-		color: var(--misc-primary);
-		font-family: 'Covered By Your Grace', cursive;
-		letter-spacing: 0.05em;
-		-webkit-text-stroke-width: 0.02em;
-		-webkit-text-stroke-color: black;
-		font-size: 225%;
-	}
+
 </style>
