@@ -1,22 +1,18 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { page } from '$app/stores';
-
-	// set nav variable to true if path isn't root, '/'
-	$: path = $page.url.pathname;
-	$: nav = path !== '/';
-	$: pathArray = path.split('/');
-	let subject = nav ? pathArray[1] : 'home';
+	// import { fade } from 'svelte/transition';
+	// import { page } from '$app/stores';
+	// // set nav variable to true if path isn't root, '/'
+	// $: path = $page.url.pathname;
+	// $: nav = path !== '/';
+	// $: pathArray = path.split('/');
+	// let subject = nav ? pathArray[1] : 'home';
 	let display = false;
-
-    console.log('hello: ' +subject);
-
-    switch(subject) {
-        case 'home': {
-            // article.getElementsByClassName("triangle-down")[0].setAttribute("border-top-color", 'red');
-        }
-    }
-
+    // console.log('hello: ' +subject);
+    // switch(subject) {
+    //     case 'home': {
+    //         // article.getElementsByClassName("triangle-down")[0].setAttribute("border-top-color", 'red');
+    //     }
+    // }
 	function toggleDisplay(event) {
 		display = !display;
 	}
@@ -50,7 +46,6 @@
 		overflow-x: auto;
 		line-height: 1.5;
 	}
-
 	.triangle-up {
 		border-bottom: 0.35em solid var(--misc-primary);
 		border-left: 0.3em solid transparent;
@@ -74,22 +69,5 @@
 		outline: none;
 		float: right;
 	}
-    .home {
-		color: var(--home-primary);
-	}
-	.about {
-		color: var(--about-primary);
-	}
-	.statics {
-		color: var(--statics-primary);
-	}
-	.strength {
-		color: var(--strength-primary);
-	}
-	.water {
-		color: var(--water-primary);
-	}
-	.misc {
-		color: var(--misc-primary);
-	}
+  
 </style>
