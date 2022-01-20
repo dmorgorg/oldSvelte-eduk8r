@@ -88,6 +88,14 @@
 			<a href="/misc" class="misc">Misc.</a>
 			<ul>
 				<li>
+					<a href="/misc/calcs">Calculators</a>
+					<ul>
+						<li>
+							<a href="/misc/calcs/vaccine">Vaccine Efficacy</a>
+						</li>
+					</ul>
+				</li>
+				<li>
 					<a href="/misc/math">Math bits...</a>
 					<ul>
 						<li>
@@ -100,6 +108,13 @@
 						</li>
 						<li>
 							<a href="/misc/math/numberTheory/">(a little) Number Theory</a>
+							<ul>
+								<li>
+									<a href="/misc/math/numberTheory/01gettingStarted">
+										01 Getting Started
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>
@@ -110,14 +125,16 @@
 
 <style>	
 	nav {
-		width: 80%;
-		margin: 0 13% auto auto;
+		width: 90%;
+		margin: -5em auto 0 auto;
 		display: flex;
 		justify-content: flex-end;
-		font-size: 130%;
+		/* align-content: flex-end; */
+		font-size: 110%;
 		height: 80vh;
 		padding: 0;
 		font-family: 'Happy Monkey', cursive;
+		/* border: 1px solid green; */
 	}
 	li {
 		position: relative;
@@ -129,7 +146,7 @@
 		border: 0.15em solid white;
 	}
 	a {
-		padding: 0.75em;
+		padding: 0.5em;
 		box-sizing: border-box;
 		border-radius: 0.4em;
 		position: relative;
@@ -145,11 +162,12 @@
 	}
 	/* first ul */
 	nav > ul {
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: center; */
+		align-self: center;
 		padding: 0;
-		position: absolute;
+		/* position: absolute; */
 	}
 	/* link text colors */
 	li > a,
@@ -266,7 +284,7 @@
 		content: '';
 		position: absolute;
 		border: 0.5em solid transparent;
-		top: 0.85em;
+		top: 0.6em;
 		right: 101%;
 		transition: all 0.875s;
 	}

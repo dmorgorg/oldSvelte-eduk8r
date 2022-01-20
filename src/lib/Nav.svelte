@@ -65,6 +65,14 @@
 			<a href="/misc" class="misc">Misc.</a>
 			<ul>
 				<li>
+					<a href="/misc/calcs">Calculators</a>
+					<ul>
+						<li>
+							<a href="/misc/calcs/vaccine">Vaccine Efficacy</a>
+						</li>
+					</ul>
+				</li>
+				<li>
 					<a href="/misc/math">Math bits...</a>
 					<ul>
 						<li>
@@ -77,6 +85,13 @@
 						</li>
 						<li>
 							<a href="/misc/math/numberTheory/">(a little) Number Theory</a>
+							<ul>
+								<li>
+									<a href="/misc/math/numberTheory/01gettingStarted">
+										01 Getting Started
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>

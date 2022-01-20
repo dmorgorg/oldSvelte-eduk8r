@@ -8,6 +8,8 @@
 	$: nav = path !== '/';
 	$: pathArray = path.split('/');
 	$: subject = nav ? pathArray[1] : 'home';
+
+	
 </script>
 
 <header>

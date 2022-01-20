@@ -17,6 +17,8 @@
 		width: 20rem;
 		padding: 0.75rem;
 		font-size: 1rem;
+		font-family: 'Happy Monkey', cursive;
+		letter-spacing: 0.05em;
 	}
 	button:hover {
 		font-weight: bold;

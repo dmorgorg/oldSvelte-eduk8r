@@ -21,20 +21,17 @@
 
     <div
 	class:show={current === "rectangular"}
-	class:hide={current !== "rectangular"}
->
+	class:hide={current !== "rectangular"}>
 	<Rectangular />
 </div>
 <div
 	class:show={current === "triangular"}
-	class:hide={current !== "triangular"}
->
+	class:hide={current !== "triangular"}>
 	<Triangular />
 </div>
 <div
 	class:show={current === "trapezoidal"}
-	class:hide={current !== "trapezoidal"}
->
+	class:hide={current !== "trapezoidal"}>
 	<Trapezoidal />
 </div>
 <div class:show={current === "circular"} class:hide={current !== "circular"}>
@@ -52,6 +49,7 @@
 	}
 	main {
 		width: 100%;
+		background: white;
 	}
     .show {
         display: block;

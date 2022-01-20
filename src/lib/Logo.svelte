@@ -17,18 +17,18 @@
 	.logo a {
 		text-decoration: none;
 		color: inherit;
-		font-family: "Kaushan Script";
-		font-family: "Bubblegum Sans", cursive;
-		font-family: "Caveat Brush", cursive;
 		font-family: "Covered By Your Grace", cursive;
-		font-size: 350%;
-		-webkit-text-stroke-width: 0.5px;
+		font-size: 3em;
+		-webkit-text-stroke-width: 1.5px;
 		-webkit-text-stroke-color: black;
 	}
 	.logo a:hover {
 		/* text-shadow: none; */
 		/* text-decoration: none; */
 		cursor: default;
+	}
+	.logo a.clickable {
+		-webkit-text-stroke-width: 1px;
 	}
 	.logo a.clickable:hover {
 		text-shadow: 0 0 0.4em black;

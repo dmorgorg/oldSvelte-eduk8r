@@ -98,7 +98,7 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 		margin: 1em 0;
 	}
 
-	.home {
+	/* .home {
 		color: var(--home-primary);
 	}
 	.about {
@@ -112,7 +112,7 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 	}
 	.water {
 		color: var(--water-primary);
-	}
+	} */
 	.misc {
 		color: var(--misc-primary);
 	}

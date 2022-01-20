@@ -10,8 +10,8 @@
 		/* border: 1px solid #bbb; */
 		margin: 2em auto;
 		padding: 1rem;
-        padding-top: 0.5em;
-		overflow-x:auto;
+        overflow-x:auto;
 		line-height: 1.5;
+		cursor: pointer;
 	}
 </style>
