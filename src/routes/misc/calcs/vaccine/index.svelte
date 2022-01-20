@@ -79,6 +79,8 @@
 		</Drop>
 	</Card>
 
+     <p>Panels with green triangles contain more information. Click the triangle!</p>
+
 	<Card>
 		<Drop>
 			<section slot="top">
@@ -147,11 +149,11 @@
 		</p>
 
 		Thus, an unvaccinated person is {likelyVac}/{likelyUnVac} =
-		<strong>{final} times more likely</strong> than a vaccinated person to die.
+		<strong>{final} times more likely to die</strong>.
 	</Card>
 
     
-    <p>(Click the downward pointing green triangles for more information.)</p>
+   
 </main>
 
 <style>
