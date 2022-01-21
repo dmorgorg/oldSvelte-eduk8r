@@ -15,35 +15,46 @@
 		icuUnvacPercent,
 		numUnVacICU,
 		likelyUnVac,
-		final;
+		final,
+		pv,
+		pvd,
+		p,
+		d;
 
 	const calculate = () => {
-		popPercent = Number((popPercent).toPrecision(3));
-		pop = Number(pop);
-		icuPercent = Number((icuPercent).toPrecision(3));
-		icu = Number(icu);
+		pv = popPercent;
+		p = pop;
+		d = icu;
+		pvd = icuPercent;
 
-		numVaccinated = Math.round((pop * popPercent) / 100);
-		numVacICU = (icu * icuPercent / 100).toPrecision(4);
-		likelyVac = Math.round(numVaccinated / numVacICU);
+		numVaccinated = Math.round(p * pv / 100);
+		numVacICU = ((d * pvd) / 100).toPrecision(5);
+		likelyVac = Math.round(p*pv / (d*pvd));
 
-		unvacPercent = (100 - popPercent).toPrecision(3);
-		numUnvaccinated = unvacPercent * pop / 100;
-		icuUnvacPercent = (100 - icuPercent).toPrecision(3);
-		numUnVacICU = (icuUnvacPercent * icu / 100).toPrecision(4);
-		likelyUnVac = Math.round(numUnvaccinated / numUnVacICU);
-		final = (likelyVac / likelyUnVac).toPrecision(4);
+		unvacPercent = (100 - pv).toPrecision(3);
+		numUnvaccinated = Math.round((100 - pv) * p/100);
+		icuUnvacPercent = (100 - pvd).toPrecision(3);
+		numUnVacICU = Number((((100 - pvd) * d) / 100).toPrecision(4));
+		likelyUnVac = Math.round((((100 - pv) * p) / ((100 - pvd) * d)));
+        final = Number(((p*pv / (d*pvd)) / (((100 - pv) * p) / ((100 - pvd) * d))).toPrecision(5));
 
-		// numVaccinated = (pop * popPercent) / 100
-		// numVacICU = (Number(icu) * icuPercent) / 100;
-		// likelyVac = numVaccinated / numVacICU;
+		// popPercent = Number(popPercent.toPrecision(3));
+		// pop = Number(pop);
+		// icuPercent = Number(icuPercent.toPrecision(3));
+		// icu = Number(icu);
 
-		// unvacPercent = 100 - popPercent;
+		// numVaccinated = Math.round((pop * popPercent) / 100);
+		// numVacICU = ((icu * icuPercent) / 100).toPrecision(4);
+		// likelyVac = Math.round(numVaccinated / numVacICU);
+
+		// unvacPercent = (100 - popPercent).toPrecision(3);
 		// numUnvaccinated = (unvacPercent * pop) / 100;
-		// icuUnvacPercent = 100 - icuPercent;
-		// numUnVacICU = (icuUnvacPercent * icu) / 100;
-		// likelyUnVac = numUnvaccinated / numUnVacICU
-		// final = likelyVac / likelyUnVac;
+		// icuUnvacPercent = (100 - icuPercent).toPrecision(3);
+		// numUnVacICU = ((icuUnvacPercent * icu) / 100).toPrecision(4);
+		// likelyUnVac = Math.round(numUnvaccinated / numUnVacICU);
+		// final = (likelyVac / likelyUnVac).toPrecision(4);
+
+		
 	};
 	const processChange = () => {
 		calculate();
@@ -54,7 +65,6 @@
 
 <main>
 	<Sect type="chapter0">Vaccine Efficacy Calculator</Sect>
-    
 
 	<Card>
 		<Drop>
@@ -79,18 +89,25 @@
 				</p>
 
 				<p>
-					Consider this scenario: 80% of the population are fully vaccinated and the fully vaccinated make up half of Covid deaths. Then, 20% of the population (the
-					unvaccinated) have the same number of deaths as the 80% of the population who are vaccinated. So the vaccinated do have protection; with these figures, it looks like you are four times more likely to die if unvaccinated.
+					Consider this scenario: 80% of the population are fully vaccinated and the fully
+					vaccinated make up half of Covid deaths. Then, 20% of the population (the unvaccinated)
+					have the same number of deaths as the 80% of the population who are vaccinated. So the
+					vaccinated do have protection; with these figures, it looks like you are four times more
+					likely to die if unvaccinated.
 				</p>
 
 				<p>
-					Let's work with some real numbers, do the calculations and find the real level of protection. There is math here, but it's pretty simple.
+					Let's work with some real numbers, do the calculations and find the real level of
+					protection. There is math here, but it's pretty simple.
 				</p>
 			</section>
 		</Drop>
 	</Card>
 
-     <p><strong>Note</strong>: Panels with<span class='triangle-down'></span>contain more information. Click the <span class='triangle-down'></span> on the panel.</p>
+	<p>
+		<strong>Note</strong>: Panels with<span class="triangle-down" />contain more information. Click
+		the <span class="triangle-down" /> on the panel.
+	</p>
 
 	<Card>
 		<Drop>
@@ -101,14 +118,16 @@
 				These default values are for Switzerland and were retrieved from <a
 					href="https://ourworldindata.org/covid-deaths-by-vaccination">Our World In Data</a
 				>
-				on 20th January, 2022. Scroll down to the data for Switzerland. Switzerland was chosen
-				because the data were the most recent for a country comparable to Canada or Britain. The
-				numbers are per 100,000 of the population.
+				on 20th January, 2022. Scroll down to the data for Switzerland. Switzerland was chosen because
+				the data were the most recent for a country comparable to Canada or Britain. The numbers are
+				per 100,000 of the population.
 
 				<p>
 					Feel free to enter your own numbers. Note that the only two figures required are the
-					percentage of the population vaccinated and the percentage of vaccinated deaths.
-					The size of the population and the number of deaths do not affect the likelihood of dying. (See for yourself by randomly changing those values; small changes in value are due to number rounding)
+					percentage of the population vaccinated and the percentage of vaccinated deaths. The size
+					of the population and the number of deaths do not affect the likelihood of dying. (See for
+					yourself by randomly changing those values; small changes in value are due to number
+					rounding)
 				</p>
 			</section>
 		</Drop>
@@ -162,9 +181,6 @@
 		Thus, an unvaccinated person is {likelyVac}/{likelyUnVac} =
 		<strong>{final} times more likely to die</strong>.
 	</Card>
-
-    
-   
 </main>
 
 <style>
@@ -197,14 +213,13 @@
 	input[type='number'] {
 		width: 7em;
 	}
-    .triangle-down {
+	.triangle-down {
 		border-top: 0.7em solid var(--misc-primary);
 		border-left: 0.6em solid transparent;
 		border-right: 0.6em solid transparent;
 		/* float: right; */
-        vertical-align:-75%;
-        margin: 0.5em;
-       
+		vertical-align: -75%;
+		margin: 0.5em;
 	}
 
 	@media (min-width: 640px) {
