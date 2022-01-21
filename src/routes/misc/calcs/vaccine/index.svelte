@@ -108,7 +108,7 @@
 				<p>
 					Feel free to enter your own numbers. Note that the only two figures required are the
 					percentage of the population vaccinated and the percentage of vaccinated deaths.
-					The size of the population and the number of deaths do not affect the likelihood of dying. (See for yourself by randomly changing those values.)
+					The size of the population and the number of deaths do not affect the likelihood of dying. (See for yourself by randomly changing those values; small changes in value are due to number rounding)
 				</p>
 			</section>
 		</Drop>
