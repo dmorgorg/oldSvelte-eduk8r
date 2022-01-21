@@ -90,7 +90,7 @@
 		</Drop>
 	</Card>
 
-     <p><strong>Note</strong>: Panels with<span class='triangle-down'></span>contain more information. Click the <span class='triangle-down'></span></p>
+     <p><strong>Note</strong>: Panels with<span class='triangle-down'></span>contain more information. Click the <span class='triangle-down'></span> on the panel.</p>
 
 	<Card>
 		<Drop>
