@@ -2,6 +2,8 @@
 	import Drop from '$lib/misc/Drop.svelte';
 	import Card from '$lib/Card.svelte';
 	import Sect from '$lib/numbering/Sect.svelte';
+    import Ki from '$lib/katex/Ki.svelte';
+    import Kd from '$lib/katex/Kd.svelte';
 
 	let popPercent = 67.6,
 		pop = 100000,
@@ -181,6 +183,56 @@
 		Thus, an unvaccinated person is {likelyVac}/{likelyUnVac} =
 		<strong>{final} times more likely to die</strong>.
 	</Card>
+
+    <Card>
+		<Drop>
+			<section slot="top">
+				<header>A (Slightly) Deeper Math Dive</header>
+			</section>
+			<section slot="drop">
+				<p>
+					The approach above doesn't address the statement above that the size of the population and the number of Covid deaths are not relevant to calculations. Here, we take a more algebraic approach and notice the size of the population and the number of Covid deaths cancel out in our derivation.
+				</p>
+
+				<p>
+					Let <Ki>p</Ki> be the size of the population under study. <br/>
+                    Let <Ki>d</Ki> be the number of deaths. <br/>
+                    Let <Ki>pv</Ki> be the percentage of the population vaccinated <br/>
+                    Let <Ki>dv</Ki> be the percentage of the dead who were vaccinated. 
+				</p>
+
+                <p>
+                    Then, the number vaccinated is <Ki>p\cdot pv/100</Ki> and the number of vaccinated who died is <Ki>\[ d\cdot dv/100 \]</Ki>. Thus, the chance of a vaccinated person dying is: 
+                    <Kd>
+                        \frac\[d\cdot dv/100\]\[p\cdot pv/100 \]=\frac\[d\cdot dv\]\[p\cdot pv \]
+                    </Kd>
+                </p>
+
+                <p>
+                    The number of unvaccinated is <Ki>p\cdot (100-pv)/100</Ki> and the number of unvaccinated who died is <Ki>d\cdot (100-dv)/100</Ki>. Thus, the chance of an unvaccinated person dying is: 
+                        <Kd>
+                            
+                            \frac\[d\cdot (100-dv)/100\]\[p\cdot (100-pv)/100\]=\frac\[d\cdot (100-dv)\]\[p\cdot (100-pv)\]
+                        </Kd>
+                </p>
+
+               <p>
+                    We want the ratio of these two results to see how many times more likely it is that the unvaccinated die. 
+                    <!-- (A value of more than one means that the unvaccinated are more likely to die; a value of less than one means that the unvaccinated are less likely to die.) -->
+    
+                    <Kd> \Large
+                       \frac\[\frac\[d\cdot(100-dv)\]\[p\cdot(100-pv)\]\]\[\frac\[d\cdot dv\]\[p\cdot pv\]\]
+                       =\frac\[\frac\[(100-dv)\]\[(100-pv)\]\]\[\frac\[ dv\]\[ pv\]\] \normalsize
+                       =\frac\[(100-dv)\cdot pv\]\[(100-pv)\cdot dv\]
+                    </Kd>
+               </p>
+
+               Notice that <Ki>p</Ki> and <Ki>d</Ki> cancelled out and are not required in the final equation. Also, a resulting value of more than one means that the unvaccinated are more likely to die; a value of less than one means that the unvaccinated are less likely to die.
+				
+			</section>
+		</Drop>
+	</Card>
+
 </main>
 
 <style>
