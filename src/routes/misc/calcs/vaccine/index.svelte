@@ -18,21 +18,32 @@
 		final;
 
 	const calculate = () => {
-		popPercent = Number(popPercent);
+		popPercent = Number((popPercent).toPrecision(3));
 		pop = Number(pop);
-		icuPercent = Number(icuPercent);
+		icuPercent = Number((icuPercent).toPrecision(3));
 		icu = Number(icu);
 
 		numVaccinated = Math.round((pop * popPercent) / 100);
-		numVacICU = (Number(icu) * icuPercent) / 100;
+		numVacICU = (icu * icuPercent / 100).toPrecision(4);
 		likelyVac = Math.round(numVaccinated / numVacICU);
 
-		unvacPercent = (100 - popPercent).toPrecision(4);
-		numUnvaccinated = (unvacPercent * pop) / 100;
-		icuUnvacPercent = (100 - icuPercent).toPrecision(4);
-		numUnVacICU = ((icuUnvacPercent * icu) / 100).toPrecision(4);
+		unvacPercent = (100 - popPercent).toPrecision(3);
+		numUnvaccinated = unvacPercent * pop / 100;
+		icuUnvacPercent = (100 - icuPercent).toPrecision(3);
+		numUnVacICU = (icuUnvacPercent * icu / 100).toPrecision(4);
 		likelyUnVac = Math.round(numUnvaccinated / numUnVacICU);
 		final = (likelyVac / likelyUnVac).toPrecision(4);
+
+		// numVaccinated = (pop * popPercent) / 100
+		// numVacICU = (Number(icu) * icuPercent) / 100;
+		// likelyVac = numVaccinated / numVacICU;
+
+		// unvacPercent = 100 - popPercent;
+		// numUnvaccinated = (unvacPercent * pop) / 100;
+		// icuUnvacPercent = 100 - icuPercent;
+		// numUnVacICU = (icuUnvacPercent * icu) / 100;
+		// likelyUnVac = numUnvaccinated / numUnVacICU
+		// final = likelyVac / likelyUnVac;
 	};
 	const processChange = () => {
 		calculate();
@@ -79,7 +90,7 @@
 		</Drop>
 	</Card>
 
-     <p>Panels with green triangles contain more information. Click the triangle!</p>
+     <p>Panels with<span class='triangle-down'></span>contain more information. Click the <span class='triangle-down'></span>!</p>
 
 	<Card>
 		<Drop>
@@ -141,7 +152,7 @@
 			{unvacPercent}% of the population of {pop} are unvaccinated, i.e. {numUnvaccinated} are not vaccinated.
 		</p>
 
-		{icuUnvacPercent}% of the {icu} deaths were not vaccinated, i.e. {numUnVacICU} deaths are unvaccinated.
+		{icuUnvacPercent}% of the {icu} deaths were not vaccinated, i.e. {numUnVacICU} deaths were unvaccinated.
 
 		<p>
 			The likelihood of an unvaccinated person dying is {numUnVacICU}/{numUnvaccinated}, i.e.
@@ -185,6 +196,15 @@
 	}
 	input[type='number'] {
 		width: 7em;
+	}
+    .triangle-down {
+		border-top: 0.7em solid var(--misc-primary);
+		border-left: 0.6em solid transparent;
+		border-right: 0.6em solid transparent;
+		/* float: right; */
+        vertical-align:-75%;
+        margin: 0.5em;
+       
 	}
 
 	@media (min-width: 640px) {
