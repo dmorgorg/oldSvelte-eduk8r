@@ -7,7 +7,7 @@
 		pop = 100000,
 		icuPercent = 11.6,
 		icu = 14.8,
-		numVaccinated,
+        numVaccinated,
 		numUnvaccinated,
 		numVacICU,
 		likelyVac,
@@ -20,6 +20,7 @@
 		pvd,
 		p,
 		d;
+        icu=Math.min(icu, pop);
 
 	const calculate = () => {
 		pv = popPercent;
@@ -29,13 +30,13 @@
 
 		numVaccinated = Math.round(p * pv / 100);
 		numVacICU = ((d * pvd) / 100).toPrecision(5);
-		likelyVac = Math.round(p*pv / (d*pvd));
+		likelyVac = Number((p*pv / (d*pvd)).toPrecision(5));
 
 		unvacPercent = (100 - pv).toPrecision(3);
 		numUnvaccinated = Math.round((100 - pv) * p/100);
 		icuUnvacPercent = (100 - pvd).toPrecision(3);
 		numUnVacICU = Number((((100 - pvd) * d) / 100).toPrecision(4));
-		likelyUnVac = Math.round((((100 - pv) * p) / ((100 - pvd) * d)));
+		likelyUnVac = Number((((100 - pv) * p) / ((100 - pvd) * d)).toPrecision(5));
         final = Number(((p*pv / (d*pvd)) / (((100 - pv) * p) / ((100 - pvd) * d))).toPrecision(5));
 
 		// popPercent = Number(popPercent.toPrecision(3));
