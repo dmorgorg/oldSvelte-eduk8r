@@ -2,14 +2,14 @@
 	import Drop from '$lib/misc/Drop.svelte';
 	import Card from '$lib/Card.svelte';
 	import Sect from '$lib/numbering/Sect.svelte';
-    import Ki from '$lib/katex/Ki.svelte';
-    import Kd from '$lib/katex/Kd.svelte';
+	import Ki from '$lib/katex/Ki.svelte';
+	import Kd from '$lib/katex/Kd.svelte';
 
 	let popPercent = 67.6,
 		pop = 100000,
 		icuPercent = 11.6,
 		icu = 14.8,
-        numVaccinated,
+		numVaccinated,
 		numUnvaccinated,
 		numVacICU,
 		likelyVac,
@@ -22,7 +22,7 @@
 		pvd,
 		p,
 		d;
-        icu=Math.min(icu, pop);
+	icu = Math.min(icu, pop);
 
 	const calculate = () => {
 		pv = popPercent;
@@ -30,16 +30,16 @@
 		d = icu;
 		pvd = icuPercent;
 
-		numVaccinated = Math.round(p * pv / 100);
+		numVaccinated = Math.round((p * pv) / 100);
 		numVacICU = ((d * pvd) / 100).toPrecision(5);
-		likelyVac = Number((p*pv / (d*pvd)).toPrecision(5));
+		likelyVac = Number(((p * pv) / (d * pvd)).toPrecision(5));
 
 		unvacPercent = (100 - pv).toPrecision(3);
-		numUnvaccinated = Math.round((100 - pv) * p/100);
+		numUnvaccinated = Math.round(((100 - pv) * p) / 100);
 		icuUnvacPercent = (100 - pvd).toPrecision(3);
 		numUnVacICU = Number((((100 - pvd) * d) / 100).toPrecision(4));
 		likelyUnVac = Number((((100 - pv) * p) / ((100 - pvd) * d)).toPrecision(5));
-        final = Number(((p*pv / (d*pvd)) / (((100 - pv) * p) / ((100 - pvd) * d))).toPrecision(5));
+		final = Number(((p * pv) / (d * pvd) / (((100 - pv) * p) / ((100 - pvd) * d))).toPrecision(5));
 
 		// popPercent = Number(popPercent.toPrecision(3));
 		// pop = Number(pop);
@@ -56,8 +56,6 @@
 		// numUnVacICU = ((icuUnvacPercent * icu) / 100).toPrecision(4);
 		// likelyUnVac = Math.round(numUnvaccinated / numUnVacICU);
 		// final = (likelyVac / likelyUnVac).toPrecision(4);
-
-		
 	};
 	const processChange = () => {
 		calculate();
@@ -184,55 +182,86 @@
 		<strong>{final} times more likely to die</strong>.
 	</Card>
 
-    <Card>
+	<Card>
 		<Drop>
 			<section slot="top">
 				<header>A (Slightly) Deeper Math Dive</header>
 			</section>
 			<section slot="drop">
 				<p>
-					The approach above doesn't address the statement above that the size of the population and the number of Covid deaths are not relevant to calculations. Here, we take a more algebraic approach and notice the size of the population and the number of Covid deaths cancel out in our derivation.
+					The approach above doesn't address the statement above that the size of the population and
+					the number of Covid deaths are not relevant to calculations. Here, we take a more
+					algebraic approach and notice the size of the population and the number of Covid deaths
+					cancel out in our derivation.
 				</p>
 
 				<p>
-					Let <Ki>p</Ki> be the size of the population under study. <br/>
-                    Let <Ki>d</Ki> be the number of deaths. <br/>
-                    Let <Ki>pv</Ki> be the percentage of the population vaccinated <br/>
-                    Let <Ki>dv</Ki> be the percentage of the dead who were vaccinated. 
+					Let <Ki>p</Ki> be the size of the population under study. <br />
+					Let <Ki>d</Ki> be the number of deaths. <br />
+					Let <Ki>pv</Ki> be the percentage of the population vaccinated <br />
+					Let <Ki>dv</Ki> be the percentage of the dead who were vaccinated.
 				</p>
 
-                <p>
-                    Then, the number vaccinated is <Ki>p\cdot pv/100</Ki> and the number of vaccinated who died is <Ki>\[ d\cdot dv/100 \]</Ki>. Thus, the chance of a vaccinated person dying is: 
-                    <Kd>
-                        \frac\[d\cdot dv/100\]\[p\cdot pv/100 \]=\frac\[d\cdot dv\]\[p\cdot pv \]
-                    </Kd>
-                </p>
+				<p>
+					Then, the number vaccinated is <Ki>p\cdot pv/100</Ki> and the number of vaccinated who died
+					is <Ki>\[ d\cdot dv/100 \]</Ki>. Thus, the chance of a vaccinated person dying is:
+					<Kd>\frac\[d\cdot dv/100\]\[p\cdot pv/100 \]=\frac\[d\cdot dv\]\[p\cdot pv \]</Kd>
+				</p>
 
-                <p>
-                    The number of unvaccinated is <Ki>p\cdot (100-pv)/100</Ki> and the number of unvaccinated who died is <Ki>d\cdot (100-dv)/100</Ki>. Thus, the chance of an unvaccinated person dying is: 
-                        <Kd>
-                            
-                            \frac\[d\cdot (100-dv)/100\]\[p\cdot (100-pv)/100\]=\frac\[d\cdot (100-dv)\]\[p\cdot (100-pv)\]
-                        </Kd>
-                </p>
+				<p>
+					The number of unvaccinated is <Ki>p\cdot (100-pv)/100</Ki> and the number of unvaccinated who
+					died is <Ki>d\cdot (100-dv)/100</Ki>. Thus, the chance of an unvaccinated person dying is:
+					<Kd>
+						\frac\[d\cdot (100-dv)/100\]\[p\cdot (100-pv)/100\]=\frac\[d\cdot (100-dv)\]\[p\cdot
+						(100-pv)\]
+					</Kd>
+				</p>
 
-               <p>
-                    We want the ratio of these two results to see how many times more likely it is that the unvaccinated die. 
-                    <!-- (A value of more than one means that the unvaccinated are more likely to die; a value of less than one means that the unvaccinated are less likely to die.) -->
-    
-                    <Kd> \Large
-                       \frac\[\frac\[d\cdot(100-dv)\]\[p\cdot(100-pv)\]\]\[\frac\[d\cdot dv\]\[p\cdot pv\]\]
-                       =\frac\[\frac\[(100-dv)\]\[(100-pv)\]\]\[\frac\[ dv\]\[ pv\]\] \normalsize
-                       =\frac\[(100-dv)\cdot pv\]\[(100-pv)\cdot dv\]
-                    </Kd>
-               </p>
+				<p>
+					We want the ratio of these two results to see how many times more likely it is that the
+					unvaccinated die.
+					<!-- (A value of more than one means that the unvaccinated are more likely to die; a value of less than one means that the unvaccinated are less likely to die.) -->
 
-               Notice that <Ki>p</Ki> and <Ki>d</Ki> cancelled out and are not required in the final equation. Also, a resulting value of more than one means that the unvaccinated are more likely to die; a value of less than one means that the unvaccinated are less likely to die.
-				
+					<Kd>
+						\Large \frac\[\frac\[d\cdot(100-dv)\]\[p\cdot(100-pv)\]\]\[\frac\[d\cdot dv\]\[p\cdot
+						pv\]\] =\frac\[\frac\[(100-dv)\]\[(100-pv)\]\]\[\frac\[ dv\]\[ pv\]\] \normalsize
+						=\frac\[(100-dv)\cdot pv\]\[(100-pv)\cdot dv\]
+					</Kd>
+				</p>
+
+				Notice that <Ki>p</Ki> and <Ki>d</Ki> cancelled out and are not required in the final equation.
+				Also, a resulting value of more than one means that the unvaccinated are more likely to die;
+				a value of less than one means that the unvaccinated are less likely to die.
 			</section>
 		</Drop>
 	</Card>
 
+	<Card>
+		<Drop>
+			<section slot="top">
+				<header>Some Considerations</header>
+			</section>
+			<section slot="drop">
+				<p>This is by no means comprehensive. Content is added here as I become aware of it. And, largely, these are my opinions and not thoroughly researched. (I am more confident of my ability to justify simple mathematics than I am in my capacity to conduct meaningful research.) Read them, consider them, And if they don't seem reasonable to you, ignore them.</p>
+
+				<p>The calculations above just analyse the numbers. It's a very 'broad-brush' analysis, where I just attempt to explain the mathematics. And that a '50% occupancy in ICU' does not imply that vaccines are not helping (unless the population vaccination rate is at or below 50%). Of course, a simple vax vs. unvax comparison leaves much out.</p>
+
+				<ol>
+					<li>
+						<p>In general, the older population is more at risk of serious outcomes from Covid. But the older population, as a group, are more highly vaccinated. The vaccinated, having a higher proportion of older people, are more likely to have serious outcomes from Covid. Because they are older, not because they are vaccinated. Thus, these older groups are suppressing the vaccination efficacy numbers. By how much, I have no idea. That raw data (age-adjusted death-rates for vaccinated vs. unvaccinated) is not readily available. </p>
+					</li>
+					<li>
+						<p>Some, with whom I have regular 'discussions' regarding the mathematics of vaccine efficacy, ask 'How many of the vaccinated had pre-existing conditions' that were the cause of ICU occupancy, death, etc., rather than Covid. That died with Covid, rather than from Covid. This line of argument is completely irrelevant. Why? Because here we're comparing differing outcomes for vaccinated and unvaccinated. Do we have evidence to assume that the vaccinated are more likely to have pre-existing conditions than the unvaccinated. Not that I've seen. In fact, there are reasons to assume the opposite.</p>
+					</li>
+				</ol>
+
+				
+
+
+
+			</section>
+		</Drop>
+	</Card>
 </main>
 
 <style>

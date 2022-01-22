@@ -30,15 +30,13 @@
 		</p>
 		<p>
 			As material is added, it is listed (and linked) below. This may save you
-			time exploring new content:
+			time when exploring for new content:
 		</p>
 		<ul>
 			<li>
-				A <a href="/statics/vis/conc/">visualisation</a> illustrating the effect
-				of a concentrated load applied to a simply supported beam. Added 11th December,
-				2021.
+				A <a href="/misc/calcs/vaccine/">Vaccine Efficacy Calculator</a> demonstrating the simple mathematics for calculating the efficacy of a vaccine from the percentage of the population vaccinated and the percentage of those who died that were vaccinated. Added 20th January, 2022.
 			</li>
-			<li>
+			<!-- <li>
 				A <a href="/statics/vis/dist/">visualisation</a> illustrating the effect
 				of a distributed load applied to a simply supported beam. Added 12th December,
 				2021.
@@ -47,7 +45,7 @@
 				A method-of-joints <a href="/statics/vis/moj/">visualisation</a>,
 				illustrating forces in the truss members of a bridge as a truck crosses
 				the bridge. Super cool, if I say so myself. Added 13th December, 2021.
-			</li>
+			</li> -->
 		</ul>
 	</section>
 </main>
@@ -58,7 +56,7 @@
 		overflow-x: none;
 		margin: 5em auto 0 auto;
 		width: 65%;
-		font-family: "Happy Monkey", cursive;
+		/* font-family: "Happy Monkey", cursive; */
 	}
 	section {
 		border-top: 0.1em solid #856d4a;
