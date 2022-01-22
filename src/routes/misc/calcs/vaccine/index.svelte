@@ -106,8 +106,7 @@
 	</Card>
 
 	<p>
-		<strong>Note</strong>: Panels with<span class="triangle-down" />contain more information. Click
-		the <span class="triangle-down" /> on the panel.
+		<strong>Note</strong>: Panels with<span class="triangle-down" />contain more information. Click<span class="triangle-down" />for content.
 	</p>
 
 	<Card>
@@ -293,14 +292,21 @@
 	}
 	input[type='number'] {
 		width: 7em;
+		font-size: 1rem;
 	}
 	.triangle-down {
 		border-top: 0.7em solid var(--misc-primary);
 		border-left: 0.6em solid transparent;
 		border-right: 0.6em solid transparent;
-		/* float: right; */
+		/* background: pink; */
 		vertical-align: -75%;
-		margin: 0.5em;
+		
+		margin: 0 0.5em;
+		/* margin-top: 1.5em; */
+		/* margin-bottom: -1.5em; */
+		/* position: absolute; */
+		
+		/* border: 1px solid green; */
 	}
 
 	@media (min-width: 640px) {

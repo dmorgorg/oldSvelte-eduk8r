@@ -51,12 +51,17 @@
 		border-left: 0.3em solid transparent;
 		border-right: 0.3em solid transparent;
 		float: right;
+		padding: 0;
+		margin-top: -0.5em;
+		
 	}
 	.triangle-down {
 		border-top: 0.35em solid var(--misc-primary);
 		border-left: 0.3em solid transparent;
 		border-right: 0.3em solid transparent;
 		float: right;
+		padding: 0;
+		margin-top: -0.5em;
 	}
 	button {
 		margin: 1.35rem;
