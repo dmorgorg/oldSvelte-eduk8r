@@ -1,18 +1,7 @@
 <script>
-	// import { fade } from 'svelte/transition';
-	// import { page } from '$app/stores';
-	// // set nav variable to true if path isn't root, '/'
-	// $: path = $page.url.pathname;
-	// $: nav = path !== '/';
-	// $: pathArray = path.split('/');
-	// let subject = nav ? pathArray[1] : 'home';
+	
 	let display = false;
-    // console.log('hello: ' +subject);
-    // switch(subject) {
-    //     case 'home': {
-    //         // article.getElementsByClassName("triangle-down")[0].setAttribute("border-top-color", 'red');
-    //     }
-    // }
+    
 	function toggleDisplay(event) {
 		display = !display;
 	}

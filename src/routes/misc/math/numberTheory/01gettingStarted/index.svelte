@@ -103,27 +103,62 @@
         </Drop>
     </Card>
 
+    <Card>    
+        <Env type='example'>
+            The number of squares between <Ki>1</Ki> and <Ki>39</Ki> is <Ki>\lfloor \sqrt\[39\]\rfloor=6</Ki>. <Ki>(\text\[They are \]1, 4, 9, 16, 25 \text\[ and \] 36.)</Ki>
+        </Env>
+        <Env type='example'>
+            Find the number of squares between <Ki>100</Ki> and <Ki>200</Ki>.
+        </Env>
+        <Env type='solution'>
+            The number of squares between <Ki>100</Ki> and <Ki>200</Ki> is the number of squares between <Ki>1</Ki> and <Ki>200</Ki> <strong>minus</strong> the number of squares between <Ki>1</Ki> and <Ki>99.</Ki> (Note that if we subtract the number of squares between <Ki>1</Ki> and <Ki>100</Ki>, where <Ki>100</Ki> is a square, we are removing one of the squares that we should be counting between <Ki>100</Ki> and <Ki>200</Ki>.)
+            <Kd> \lfloor \sqrt\[200\]\rfloor - \lfloor \sqrt\[99\]\rfloor = 14-9=5</Kd>
+            The squares are <Ki>100, 121, 144, 156 \text\[ and \] 169</Ki>.
+        </Env>
+    </Card>
 
+    <Card>
+        <Drop>
+            <section slot='top'>
+                <Env type='proposition' title='Counting Digits'>If <Ki>n</Ki> is a positive integer, then the number of digits in the decimal representation of <Ki>n</Ki> is <Ki>\[ \lfloor \log_\[10\](n) \rfloor + 1\]</Ki></Env>
+            </section>
+            <section slot='drop'>
+                <Env type='remark'>
+                    This is not a proof, more a less rigorous justification of the proposition.
 
+                    <p>(I remember the following about logarithms from my schooling in the 1960s, the pre-calculator age when we schoolkids spent countless hours performing multiplication and division with the aid of logarithm and antilogarithm tables. To this day, the logarithms for <Ki>2</Ki> and <Ki>3</Ki> &mdash; <Ki>0.3010</Ki> and <Ki>0.4471</Ki> &mdash; are indelibly printed in my mind, to the four digits that we were required to use.)</p>
 
+                    <p>Integers in the range <Ki>0-9</Ki> are of the form <Ki>0.abcd\ldots</Ki> where the <Ki>0</Ki> is the 'characteristic' of the logarithm of the number and the <Ki>a, b, c, d, \ldots</Ki> are the decimal digits of the 'mantissa' of the logarithm. Integers in the range <Ki>0-9</Ki> have a characteristic of <Ki>0</Ki>; integers in the range <Ki>10-99</Ki> have a characteristic of <Ki>1</Ki>; integers in the range <Ki>100-999</Ki> have a characteristic of <Ki>3</Ki>; and so on.</p>
 
-                <Card>
-                    
-               
-                    <Env type='example'>
-                        The number of squares between <Ki>1</Ki> and <Ki>39</Ki> is <Ki>\lfloor \sqrt\[39\]\rfloor=6</Ki>. <Ki>(\text\[They are \]1, 4, 9, 16, 25 \text\[ and \] 36.)</Ki>
-                    </Env>
-                    <Env type='example'>
-                        Find the number of squares between <Ki>100</Ki> and <Ki>200</Ki>.
-                    </Env>
-                    <Env type='solution'>
-                        The number of squares between <Ki>100</Ki> and <Ki>200</Ki> is the number of squares between <Ki>1</Ki> and <Ki>200</Ki> <strong>minus</strong> the number of squares between <Ki>1</Ki> and <Ki>99.</Ki> (Note that if we subtract the number of squares between <Ki>1</Ki> and <Ki>100</Ki>, where <Ki>100</Ki> is a square, we are removing one of the squares that we should be counting between <Ki>100</Ki> and <Ki>200</Ki>.)
-                        <Kd> \lfloor \sqrt\[200\]\rfloor - \lfloor \sqrt\[99\]\rfloor = 14-9=5</Kd>
-                        The squares are <Ki>100, 121, 144, 156 \text\[ and \] 169</Ki>.
-                    </Env>
-                </Card>
+                    Integers in the range <Ki>10^0-(10^1-1)</Ki> have characteristic <Ki>0</Ki> and take a single digit to express in decimal representation; integers in the range <Ki>10^1-(10^2-1)</Ki> have characteristic <Ki>1</Ki> and take <Ki>2</Ki> digits; integers in the range <Ki>10^2-(10^3-1)</Ki> have characteristic <Ki>2</Ki> and take <Ki>3</Ki> digits. In general, integers in the range <Ki>\[10^a-(10^\[a+1\]-1)\]</Ki> have characteristic <Ki>a</Ki> and take <Ki>a+1</Ki> digits to express in digital representation. Here <Ki>a = \lfloor \log_\[10\]n \rfloor</Ki> and the result follows.
+                </Env>
+            </section>
+        </Drop>
+    </Card>
+
+    <Card>
+        <Env type='proposition' title='Counting Bits'>
+            If <Ki>n</Ki> is a positive integer, then the number of digits in the binary representation of <Ki>n</Ki> is <Ki>\[ \lfloor \log_\[2\](n) \rfloor + 1\]</Ki>
+        </Env>
+    </Card>
            
-       
+    <Sect>Division</Sect>  
+
+    <Card>
+        <Drop>
+            <section slot='top'>
+                 <Env type='proposition' title='Division with Remainder'>
+                Let a and b be integers, with b positive. Then there exist integers q and r satisfying
+                <Kd>a=q\cdot b+r \textit\[ and \] 0\le r \lt b</Kd>
+            </Env>
+            </section>
+           <section slot='drop'>
+               <Env type='proof'>
+                   
+               </Env>
+           </section>
+        </Drop>
+    </Card>
    
 </main>
 
