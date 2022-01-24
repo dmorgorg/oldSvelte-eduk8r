@@ -62,26 +62,26 @@
 
 		<li class="strength">
 			<a href="/strength"><s>Strength</s></a>
-			<ul>
+			<!-- <ul>
 				<li><a href="/strength/guided"><s>Guided Practice</s></a></li>
 				<li><a href="/strength/tables"><s>Tables & Formul&aelig;</s></a></li>
-			</ul>
+			</ul> -->
 		</li>
 
-		<li class="water">
-			<a href="/water">Fluids/Water</a>
+		<li class="fluids">
+			<a href="/fluids">Fluids/Water</a>
 			<ul>
-				<li><a href="/water/guided"><s>Guided Practice</s></a></li>
+				<!-- <li><a href="/fluids/guided"><s>Guided Practice</s></a></li> -->
 				<li>
-					<a href="/water/calcs" class="hasSub">Calculators </a>
+					<a href="/fluids/calcs" class="hasSub">Calculators </a>
 					<ul>
-						<li><a href="/water/calcs/hw">Hazen-Williams</a></li>
-						<li><a href="/water/calcs/oc">Open Channel</a></li>
+						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
+						<li><a href="/fluids/calcs/openChannel/index.html">Open Channel</a></li>
 					</ul>
 				</li>
-				<li>
-					<a href="/water/tables"><s>Tables & Formul&aelig;</s></a>
-				</li>
+				<!-- <li>
+					<a href="/fluids/tables"><s>Tables & Formul&aelig;</s></a>
+				</li> -->
 			</ul>
 		</li>
 		<li class="misc">
@@ -247,8 +247,8 @@
 	li.statics li,
 	li.strength, 
 	li.strength li,
-	li.water,
-	li.water li,
+	li.fluids,
+	li.fluids li,
 	li.misc,
 	li.misc li {
 		background-color: var(--home-primary);
@@ -267,9 +267,9 @@
 	li.strength li:hover {
 		background-color: var(--strength-primary);
 	}
-	li.water:hover,
-	li.water li:hover {
-		background-color: var(--water-primary);
+	li.fluids:hover,
+	li.fluids li:hover {
+		background-color: var(--fluids-primary);
 	}
 	li.misc:hover,
 	li.misc li:hover {
@@ -292,8 +292,8 @@
 	li.statics ul > li > a::after,
 	li.strength > a::after,
 	li.strength ul > li > a::after,
-	li.water > a::after,
-	li.water ul > li > a::after,
+	li.fluids > a::after,
+	li.fluids ul > li > a::after,
 	li.misc > a::after,
 	li.misc ul > li > a::after{
 		border-right: 0.75em solid var(--home-primary);

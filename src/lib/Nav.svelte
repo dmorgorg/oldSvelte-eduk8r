@@ -39,25 +39,25 @@
 		</li>
 		<li class="strength">
 			<a href="/strength"><s>Strength</s></a>
-			<ul>
+			<!-- <ul>
 				<li><a href="/strength/guided"><s>Guided Practice</s></a></li>
 				<li><a href="/strength/tables"><s>Tables & Formul&aelig;</s></a></li>
-			</ul>
+			</ul> -->
 		</li>
-		<li class="water">
-			<a href="/water">Fluids/Water</a>
+		<li class="fluids">
+			<a href="/fluids">Fluids/Water</a>
 			<ul>
-				<li><a href="/water/guided"><s>Guided Practice</s></a></li>
+				<!-- <li><a href="/fluids/guided"><s>Guided Practice</s></a></li> -->
 				<li>
-					<a href="/water/calcs">Calculators </a>
+					<a href="/fluids/calcs">Calculators </a>
 					<ul>
-						<li><a href="/water/calcs/hw">Hazen-Williams</a></li>
-						<li><a href="/water/calcs/oc">Open Channel</a></li>
+						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
+						<li><a href="/fluids/calcs/openChannel/index.html">Open Channel</a></li>
 					</ul>
 				</li>
-				<li>
-					<a href="/water/tables"><s>Tables & Formul&aelig;</s></a>
-				</li>
+				<!-- <li>
+					<a href="/fluids/tables"><s>Tables & Formul&aelig;</s></a>
+				</li> -->
 			</ul>
 		</li>
 
@@ -203,10 +203,10 @@
 		border: 0.15em solid var(--strength-primary);
 		transition: all 0.875s;
 	}
-	li.water,
-	li.water li {
-		background-color: var(--water-primary);
-		border: 0.15em solid var(--water-primary);
+	li.fluids,
+	li.fluids li {
+		background-color: var(--fluids-primary);
+		border: 0.15em solid var(--fluids-primary);
 		transition: all 0.875s;
 	}
 	li.misc,
@@ -239,8 +239,8 @@
 	li.strength > a::after {
 		border-top: 0.75em solid var(--strength-primary);
 	}
-	li.water > a::after {
-		border-top: 0.75em solid var(--water-primary);
+	li.fluids > a::after {
+		border-top: 0.75em solid var(--fluids-primary);
 	}
 	li.misc > a::after {
 		border-top: 0.75em solid var(--misc-primary);
@@ -269,8 +269,8 @@
 	li.strength ul > li > a::after {
 		border-right: 0.75em solid var(--strength-primary);
 	}
-	li.water > ul > li > a::after {
-		border-right: 0.75em solid var(--water-primary);
+	li.fluids > ul > li > a::after {
+		border-right: 0.75em solid var(--fluids-primary);
 	}
 	li.misc ul > li > a::after {
 		border-right: 0.75em solid var(--misc-primary);

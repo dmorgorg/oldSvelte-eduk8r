@@ -124,9 +124,9 @@
             </section>
             <section slot='drop'>
                 <Env type='remark'>
-                    This is not a proof, more a less rigorous justification of the proposition.
+                    This is not a proof, more of a somewhat less rigorous justification of the proposition.
 
-                    <p>(I remember the following about logarithms from my schooling in the 1960s, the pre-calculator age when we schoolkids spent countless hours performing multiplication and division with the aid of logarithm and antilogarithm tables. To this day, the logarithms for <Ki>2</Ki> and <Ki>3</Ki> &mdash; <Ki>0.3010</Ki> and <Ki>0.4471</Ki> &mdash; are indelibly printed in my mind, to the four digits that we were required to use.)</p>
+                    <!-- <p>(I remember the following about logarithms from my schooling in the 1960s, the pre-calculator age when we schoolkids spent countless hours performing multiplication and division with the aid of logarithm and antilogarithm tables. To this day, the logarithms for <Ki>2</Ki> and <Ki>3</Ki> &mdash; <Ki>0.3010</Ki> and <Ki>0.4471</Ki> &mdash; are indelibly printed in my mind, to the four digits that we were required to use.)</p> -->
 
                     <p>Integers in the range <Ki>0-9</Ki> are of the form <Ki>0.abcd\ldots</Ki> where the <Ki>0</Ki> is the 'characteristic' of the logarithm of the number and the <Ki>a, b, c, d, \ldots</Ki> are the decimal digits of the 'mantissa' of the logarithm. Integers in the range <Ki>0-9</Ki> have a characteristic of <Ki>0</Ki>; integers in the range <Ki>10-99</Ki> have a characteristic of <Ki>1</Ki>; integers in the range <Ki>100-999</Ki> have a characteristic of <Ki>3</Ki>; and so on.</p>
 
@@ -140,24 +140,36 @@
         <Env type='proposition' title='Counting Bits'>
             If <Ki>n</Ki> is a positive integer, then the number of digits in the binary representation of <Ki>n</Ki> is <Ki>\[ \lfloor \log_\[2\](n) \rfloor + 1\]</Ki>
         </Env>
+        No proof provided.
     </Card>
            
-    <Sect>Division</Sect>  
+    <Sect>Divisibility</Sect>  
 
     <Card>
         <Drop>
             <section slot='top'>
                  <Env type='proposition' title='Division with Remainder'>
                 Let a and b be integers, with b positive. Then there exist integers q and r satisfying
-                <Kd>a=q\cdot b+r \textit\[ and \] 0\le r \lt b</Kd>
+                <Kd>a=q\cdot b+r \textit\[ and  \] 0\le r \lt b</Kd>
             </Env>
             </section>
            <section slot='drop'>
                <Env type='proof'>
-                   
+                    <Kd>
+                        \begin\[aligned\]
+                            0\le \frac ab - \lfloor \frac ab \rfloor \lt 1 &\Rightarrow 0\le b\left( \frac ab - \lfloor \frac ab \rfloor\right) \lt b \\
+                            &\Rightarrow 0\le   a - b\lfloor \frac ab \rfloor \lt b
+                        \end\[aligned\]
+                    </Kd>
+                    <p>
+                        Let <Ki>q=\lfloor a/b \rfloor</Ki> and <Ki>r=a-q\cdot b\quad \left(= a-b\lfloor a/b \rfloor \right).</Ki>
+                    </p> 
+                    
+                    Then these satisfy <Kd>a=q\cdot b+r \textit\[ and  \] 0\le r \lt b</Kd>
                </Env>
            </section>
         </Drop>
+        <Env type='remark'><Ki>q</Ki> is known as the <strong>quotient</strong> and <Ki>r</Ki> the <strong>remainder</strong>.</Env>
     </Card>
    
 </main>

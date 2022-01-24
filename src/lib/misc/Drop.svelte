@@ -1,7 +1,7 @@
 <script>
-	
+	import { blur } from 'svelte/transition';
 	let display = false;
-    
+
 	function toggleDisplay(event) {
 		display = !display;
 	}
@@ -12,13 +12,15 @@
 		{#if display}
 			<div class="triangle-up" />
 		{:else}
-            <div class="triangle-down" />
+			<div class="triangle-down" />
 		{/if}
 	</button>
 	<slot name="top"><!-- optional fallback --></slot>
 
 	{#if display}
-		<slot name="drop"><!-- optional fallback --></slot>
+		<span transition:blur={{ duration: 2000 }}>
+			<slot name="drop"><!-- optional fallback --></slot>
+		</span>
 	{/if}
 	<!-- optional always visible content below dropdown -->
 	<slot name="bottom"><!-- optional fallback --></slot>
@@ -42,7 +44,6 @@
 		float: right;
 		padding: 0;
 		margin-top: -0.5em;
-		
 	}
 	.triangle-down {
 		border-top: 0.35em solid var(--misc-primary);
@@ -63,5 +64,4 @@
 		outline: none;
 		float: right;
 	}
-  
 </style>

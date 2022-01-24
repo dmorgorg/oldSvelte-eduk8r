@@ -9,8 +9,8 @@
   --misc-primary: #172;
   --misc-primary-hover: #09801c;
   --misc-secondary: #000;
-  --water-primary: #099;
-  --water-secondary: #000;
+  --fluids-primary: #099;
+  --fluids-secondary: #000;
   --strength-primary: #e70;
   --strength-secondary: #000;
   --li-hover-border: red;
@@ -28,10 +28,11 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   background-color: #eee;
+  max-width: 1200px;
 }
 
 *:after,

@@ -67,7 +67,7 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 	.remark {
 		font-family: 'Alegreya SC', serif;
 		text-transform: capitalize;
-		/* font-weight: bold; */
+		font-weight: bold;
 		font-size: 1.1em;
 	}
 	.proof::before {
@@ -95,7 +95,7 @@ since, unlike the other counters, it does not begin at 1. All counters have to b
 		color: var(--text-primary);
 	}
 	div {
-		margin: 1em 0;
+		margin: 0 0 0.75em 0;
 	}
 
 	/* .home {
