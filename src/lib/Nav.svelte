@@ -52,7 +52,7 @@
 					<a href="/fluids/calcs">Calculators </a>
 					<ul>
 						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
-						<li><a href="/fluids/calcs/openChannel/index.html">Open Channel</a></li>
+						<li><a href="/static/fluids/calcs/openChannel/index.html">Open Channel</a></li>
 					</ul>
 				</li>
 				<!-- <li>

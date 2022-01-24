@@ -69,14 +69,14 @@
 		</li>
 
 		<li class="fluids">
-			<a href="/fluids">Fluids/Water</a>
+			<a href="/water">Fluids/Water</a>
 			<ul>
 				<!-- <li><a href="/fluids/guided"><s>Guided Practice</s></a></li> -->
 				<li>
 					<a href="/fluids/calcs" class="hasSub">Calculators </a>
 					<ul>
 						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
-						<li><a href="/fluids/calcs/openChannel/index.html">Open Channel</a></li>
+						<li><a href="/static/fluids/calcs/openChannel/index.html">Open Channel</a></li>
 					</ul>
 				</li>
 				<!-- <li>
