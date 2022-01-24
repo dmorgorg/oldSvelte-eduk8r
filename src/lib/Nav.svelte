@@ -197,8 +197,7 @@
 		border: 0.15em solid var(--statics-primary);
 		transition: all 0.875s;
 	}
-	li.strength,
-	li.strength li {
+	li.strength {
 		background-color: var(--strength-primary);
 		border: 0.15em solid var(--strength-primary);
 		transition: all 0.875s;
@@ -266,9 +265,9 @@
 	li.statics ul > li > a::after {
 		border-right: 0.75em solid var(--statics-primary);
 	}
-	li.strength ul > li > a::after {
+	/* li.strength ul > li > a::after {
 		border-right: 0.75em solid var(--strength-primary);
-	}
+	} */
 	li.fluids > ul > li > a::after {
 		border-right: 0.75em solid var(--fluids-primary);
 	}

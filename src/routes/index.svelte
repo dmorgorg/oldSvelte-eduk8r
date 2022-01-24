@@ -246,7 +246,7 @@
 	li.statics,
 	li.statics li,
 	li.strength, 
-	li.strength li,
+	/* li.strength li, */
 	li.fluids,
 	li.fluids li,
 	li.misc,
@@ -263,8 +263,7 @@
 	li.statics li:hover {
 		background-color: var(--statics-primary);
 	}
-	li.strength:hover,
-	li.strength li:hover {
+	li.strength:hover {
 		background-color: var(--strength-primary);
 	}
 	li.fluids:hover,
@@ -291,7 +290,7 @@
 	li.statics > a::after,
 	li.statics ul > li > a::after,
 	li.strength > a::after,
-	li.strength ul > li > a::after,
+	/* li.strength ul > li > a::after, */
 	li.fluids > a::after,
 	li.fluids ul > li > a::after,
 	li.misc > a::after,
