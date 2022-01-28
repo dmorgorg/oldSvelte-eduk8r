@@ -30,8 +30,10 @@
 	.card {
 		background: transparent;
 		display: block;
+		/* box-shadow: 0.1em 0.1em 0.75em #aaa; */
 		margin: 0 auto;
 		padding: 0;
+		/* padding-top: 0.5em; */
 		overflow-x: auto;
 		line-height: 1.5;
 	}

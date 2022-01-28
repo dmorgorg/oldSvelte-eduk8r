@@ -235,7 +235,7 @@
 		</Drop>
 	</Card>
 
-	<Card>
+	<!-- <Card>
 		<Drop>
 			<section slot="top">
 				<header>Some Considerations</header>
@@ -260,7 +260,7 @@
 
 			</section>
 		</Drop>
-	</Card>
+	</Card> -->
 </main>
 
 <style>

@@ -9,22 +9,23 @@
 
 <style>
 	button {
-		background-color: var(--water-primary);
+		background-color: var(--fluids-primary);
 		border: none;
 		outline: none;
-		margin: 0 1em;
+		/* margin: 0 1em; */
 		cursor: pointer;
 		width: 20rem;
 		padding: 0.75rem;
 		font-size: 1rem;
 		font-family: 'Happy Monkey', cursive;
 		letter-spacing: 0.05em;
+		border-radius: 0.3em;
 	}
 	button:hover {
 		font-weight: bold;
 	}
 	button.active {
-		color: white;
+		color: red;
 		font-weight: bold;
 	}
 </style>

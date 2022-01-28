@@ -19,6 +19,10 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
 	.chapter0,
     .section,
 	.section0, 
+	.subsection,
+	.subsection0,
+	.subsubsection,
+	.subsubsection0,
 	.title {       
 		margin: 0.5em 0 -0.5em -0.25em;
 		letter-spacing: 0.025em;
@@ -27,7 +31,7 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
 		font-size: 2.75rem;
         -webkit-text-stroke-width: 0.02em;
 		-webkit-text-stroke-color: black;
-		display: inline-block;
+		/* display: inline-block; */
 		padding: 0;
     }
     .chapter::before {
@@ -35,8 +39,8 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
     }
     .section,
 	.section0 {
-        margin: 0.75em auto -0.5em 0;
-        font-size: 2rem;
+        font-size: 2.5rem;
+		padding: 0;
     }
     .section::before {
         counter-increment: section;
@@ -44,12 +48,24 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
     }
 	.title{
 		margin-left: -0.25em;
+		font-size: 2.5em;
 	}
+	/* header {
+		margin: 0;
+	} */
+	/* .subsection,
+	.subsection0 {
+		font-size: 3.5em;
+		margin-bottom: -1.5em;
+	}
+	.subsubsection,
+	.subsubsection0 {
+		font-size: 1.5em;
+	} */
 	
 	.center {
 		margin: 0 auto;
 		text-align: center;
-		color: red;
 	}
 
 	.home {
@@ -64,8 +80,8 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
 	.strength {
 		color: var(--strength-primary);
 	}
-	.water {
-		color: var(--water-primary);
+	.fluids {
+		color: var(--fluids-primary);
 	}
 	.misc {
 		color: var(--misc-primary);

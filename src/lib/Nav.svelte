@@ -52,7 +52,13 @@
 					<a href="/fluids/calcs">Calculators </a>
 					<ul>
 						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
-						<li><a href="/static/fluids/calcs/openChannel/index.html">Open Channel</a></li>
+						
+						<li><a href="/fluids/calcs/openChannel">Open Channel<br />Under construction<br />Double click alternative below<br/>Then refresh!<br/>Shoud be back up soon!</a></li>
+						<li>
+							<a href="/precomped/fluids/calcs/openChannel/index.html"
+								>Open Channel</a
+							>
+						</li>
 					</ul>
 				</li>
 				<!-- <li>
@@ -87,9 +93,7 @@
 							<a href="/misc/math/numberTheory/">(a little) Number Theory</a>
 							<ul>
 								<li>
-									<a href="/misc/math/numberTheory/01gettingStarted">
-										01 Getting Started
-									</a>
+									<a href="/misc/math/numberTheory/01gettingStarted"> 01 Getting Started </a>
 								</li>
 							</ul>
 						</li>

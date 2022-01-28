@@ -23,8 +23,6 @@
 		-webkit-text-stroke-color: black;
 	}
 	.logo a:hover {
-		/* text-shadow: none; */
-		/* text-decoration: none; */
 		cursor: default;
 	}
 	.logo a.clickable {
@@ -48,8 +46,8 @@
 	.strength {
 		color: var(--strength-primary);
 	}
-	.water {
-		color: var(--water-primary);
+	.fluids {
+		color: var(--fluids-primary);
 	}
 	.misc {
 		color: var(--misc-primary);

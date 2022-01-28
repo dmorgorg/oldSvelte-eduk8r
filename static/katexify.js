@@ -10,6 +10,12 @@ let katexify = () => {
             left: "!$",
             right: "!$",
             display: false
-        }]
+            }],
+        macros: {
+            "\RR": "\mathbb{R}",
+            "\NN": "\mathbb{N}",
+            "\[": "{",
+            "\]": "}"
+        }
     });
 };

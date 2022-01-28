@@ -1,21 +1,15 @@
 :root {
   --home-primary: #bbb;
   --about-primary: #ae946d;
-  --about-primary-hover: #d79c45;
   --about-secondary: #000;
   --statics-primary: #900;
-  --statics-primary-hover: #880000;
   --statics-secondary: #000;
   --misc-primary: #172;
-  --misc-primary-hover: #09801c;
   --misc-secondary: #000;
-  --fluids-primary: #099;
+  --fluids-primary: #088;
   --fluids-secondary: #000;
   --strength-primary: #e70;
   --strength-secondary: #000;
-  --li-hover-border: red;
-  --sub-ul: #aaa;
-  --sub-ul-hover: #777;
   --page-background: white;
   --link-text: white;
   --link-text-hover: black;
@@ -32,6 +26,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #eee;
+  background-color: var(--page-background);
   max-width: 1200px;
 }
 
@@ -40,11 +35,93 @@ body {
   box-sizing: inherit;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 .fright {
   float: right;
 }
 
 .center {
   margin: 0 auto;
+  text-align: center;
+}
+
+.width95 {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width90 {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width85 {
+  width: 85%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width80 {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width75 {
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width70 {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width65 {
+  width: 65%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width60 {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width55 {
+  width: 55%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width50 {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.width45 {
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
   text-align: center;
 }

@@ -69,16 +69,21 @@
 		</li>
 
 		<li class="fluids">
-			<a href="/water">Fluids/Water</a>
+			<a href="/fluids">Fluids/Water</a>
 			<ul>
 				<!-- <li><a href="/fluids/guided"><s>Guided Practice</s></a></li> -->
 				<li>
 					<a href="/fluids/calcs" class="hasSub">Calculators </a>
 					<ul>
 						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
-						<li><a href="/static/fluids/calcs/openChannel/index.html">Open Channel</a></li>
+						<li>
+							<a href="/fluids/calcs/openChannel">Open 		Channel<br />Under construction<br />Double click alternative below<br/>Back up soon!</a
+							>
+						</li>
+						<li><a href="/precomped/fluids/calcs/openChannel/index.html">Open Channel</a></li>
 					</ul>
 				</li>
+
 				<!-- <li>
 					<a href="/fluids/tables"><s>Tables & Formul&aelig;</s></a>
 				</li> -->
@@ -110,9 +115,7 @@
 							<a href="/misc/math/numberTheory/">(a little) Number Theory</a>
 							<ul>
 								<li>
-									<a href="/misc/math/numberTheory/01gettingStarted">
-										01 Getting Started
-									</a>
+									<a href="/misc/math/numberTheory/01gettingStarted"> 01 Getting Started </a>
 								</li>
 							</ul>
 						</li>
@@ -123,7 +126,7 @@
 	</ul>
 </nav>
 
-<style>	
+<style>
 	nav {
 		width: 90%;
 		margin: -5em auto 0 auto;
@@ -209,9 +212,7 @@
 		opacity: 1;
 		transition: all 0.875s;
 	}
-	
-	
-	
+
 	li > a:only-child::after {
 		border: none;
 		transition: all 0.875s;
@@ -226,21 +227,7 @@
 		right: 100%;
 	} */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* //////////////////////////////////////////////////////////////////// */
-
-	
+	/* //////////////////////////////////////////////////////////////////// */
 
 	li.about,
 	li.statics,
@@ -294,7 +281,7 @@
 	li.fluids > a::after,
 	li.fluids ul > li > a::after,
 	li.misc > a::after,
-	li.misc ul > li > a::after{
+	li.misc ul > li > a::after {
 		border-right: 0.75em solid var(--home-primary);
 	}
 	li:hover > a::after,
@@ -304,7 +291,4 @@
 		z-index: 100;
 		right: 101%;
 	}
-	
-
-
 </style>

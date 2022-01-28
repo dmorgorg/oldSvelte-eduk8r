@@ -7,11 +7,11 @@
 		background: white;
 		display: block;
 		box-shadow: 0.1em 0.1em 0.75em #aaa;
-		/* border: 1px solid #bbb; */
-		margin: 2em auto;
+		margin: 1rem auto;
 		padding: 1rem;
+		padding: 0.5em 1em;
         overflow-x:auto;
+		overflow-y: hidden;
 		line-height: 1.5;
-		cursor: pointer;
 	}
 </style>
