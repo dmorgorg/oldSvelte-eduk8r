@@ -38,7 +38,9 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
         content: 'Ch.' counter(chapter) '  '
     }
     .section,
-	.section0 {
+	.section0,
+	.subsection,
+	.subsetion0 {
         font-size: 2.5rem;
 		padding: 0;
     }
@@ -50,18 +52,16 @@ since, unlike the other counters, it does not (always) begin at 1. All counters 
 		margin-left: -0.25em;
 		font-size: 2.5em;
 	}
-	/* header {
-		margin: 0;
-	} */
-	/* .subsection,
+
+	.subsection,
 	.subsection0 {
-		font-size: 3.5em;
+		font-size: 2em;
 		margin-bottom: -1.5em;
 	}
 	.subsubsection,
 	.subsubsection0 {
 		font-size: 1.5em;
-	} */
+	}
 	
 	.center {
 		margin: 0 auto;

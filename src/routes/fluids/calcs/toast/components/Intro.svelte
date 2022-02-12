@@ -1,5 +1,5 @@
 <script>
-	export let typeOfChannel = 'trapezoidal';
+	export let typeOfChannel = '';
 </script>
 
 <section>
@@ -14,7 +14,7 @@
 	</p>
 
 	<p>
-		Either flow depth, \(y\), in metres (\(\mathsf&lbrace;m&rbrace;\)) or volume
+		Either flow depth, !$y!$, in metres (!$\mathsf&lbrace;m&rbrace;!$) or volume
 		flow, !$Q!$, in cubic metres per second !$(\mathsf&lbrace;m^3\!/s&rbrace;)!$
 		must be specified. But not both.
 	</p>

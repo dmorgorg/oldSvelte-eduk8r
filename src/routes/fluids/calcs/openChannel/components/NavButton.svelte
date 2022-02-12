@@ -9,23 +9,17 @@
 
 <style>
 	button {
+		font-size: 90%;
 		background-color: var(--fluids-primary);
 		border: none;
-		outline: none;
-		margin: 0 0.5em;
-		cursor: pointer;
-		/* width: 20rem; */
-		padding: 0.75rem;
-		font-size: 1rem;
-		font-family: 'Happy Monkey', cursive;
-		letter-spacing: 0.05em;
 		border-radius: 0.3em;
+		outline: none;
+		padding: 0.5em 1em;
 	}
 	button:hover {
-		font-weight: bold;
+		color: #ccc;
 	}
 	button.active {
 		color: white;
-		font-weight: bold;
 	}
 </style>

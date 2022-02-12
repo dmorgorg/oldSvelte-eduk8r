@@ -80,7 +80,7 @@
 							<a href="/fluids/calcs/openChannel">Open 		Channel<br />Under construction<br />Double click alternative below<br/>Back up soon!</a
 							>
 						</li>
-						<li><a href="/precomped/fluids/calcs/openChannel/index.html">Open Channel</a></li>
+						<li><a href="/fluids/calcs/toast">Toast</a></li>
 					</ul>
 				</li>
 

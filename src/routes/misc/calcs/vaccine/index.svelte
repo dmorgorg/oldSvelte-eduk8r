@@ -65,7 +65,7 @@
 </script>
 
 <main>
-	<Sect type="chapter0">Vaccine Efficacy Calculator</Sect>
+	<Sect type="chapter0" center>Vaccine Efficacy Calculator</Sect>
 
 	<Card>
 		<Drop>

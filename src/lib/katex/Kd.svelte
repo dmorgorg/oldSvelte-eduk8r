@@ -9,9 +9,10 @@
 
 <span use:render><slot /></span>
 
-<style>
-	:global(.katex){
-		/* color: green; */
-		font-size: 1.1em;
-	}
-</style>
+<svelte:head>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+		crossorigin="anonymous" />
+</svelte:head>

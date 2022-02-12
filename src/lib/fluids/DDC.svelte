@@ -5,7 +5,7 @@
 	let display = false;
 
 	function toggleDisplay(event) {
-		displayCalc = !displayCalc;
+		display = !display;
 	}
 </script>
 
@@ -21,9 +21,8 @@
 	</section>
 
 	{#if display}
-		<section class="drop" transition:fade={{ duration: 2500 }}>
+		<section class="drop" transition:fade={{ duration: 500 }}>
 			{@html drop}
-			<slot name="solution" />
 		</section>
 	{/if}
 </article>
