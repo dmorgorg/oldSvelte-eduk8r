@@ -1,40 +1,7 @@
 <script>
 	import Rectangular from './components/Rectangular.svelte';
 	import Sect from '$lib/numbering/Sect.svelte';
-	// import { onMount } from 'svelte';
 
-	// let katexify;
-
-	// onMount(() => {
-	// 	katexify = () => {
-	// 		renderMathInElement(document.body, {
-	// 			delimiters: [
-	// 				{
-	// 					left: '$$',
-	// 					right: '$$',
-	// 					display: true
-	// 				},
-	// 				{
-	// 					left: '!$',
-	// 					right: '!$',
-	// 					display: false
-	// 				},
-	// 				{
-	// 					left: '\\[',
-	// 					right: '\\]',
-	// 					display: true
-	// 				},
-	// 				{
-	// 					left: '\\(',
-	// 					right: '\\)',
-	// 					display: false
-	// 				}
-	// 			]
-	// 		});
-	// 	};
-
-	// 	katexify();
-	// });
 </script>
 
 <Sect type="chapter0" center>Open Channel Flow Calculator</Sect>
