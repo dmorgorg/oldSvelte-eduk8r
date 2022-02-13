@@ -53,12 +53,8 @@
 					<ul>
 						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
 						
-						<li><a href="/fluids/calcs/openChannel">Open Channel<br />Under construction<br />Double click alternative below<br/>Then refresh!<br/>Shoud be back up soon!</a></li>
-						<li>
-							<a href="/precomped/fluids/calcs/openChannel/index.html"
-								>Open Channel</a
-							>
-						</li>
+						<li><a href="/fluids/calcs/openChannel">Open Channel Flow</a></li>
+						
 					</ul>
 				</li>
 				<!-- <li>

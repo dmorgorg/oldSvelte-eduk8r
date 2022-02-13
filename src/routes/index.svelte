@@ -5,7 +5,6 @@
 		</li>
 		<li class="statics">
 			<a href="/statics">Statics</a>
-			<!-- Structural Statics -->
 			<ul>
 				<li>
 					<a href="/statics/vis">Visualisations</a>
@@ -39,54 +38,24 @@
 						</li>
 					</ul>
 				</li>
-
-				<!-- <li>
-					<a href="/statics/guided"><s>A Course</s></a>
-					<ul>
-						<li>
-							<a href="/statics/guided/conc"><s>Concurrent Forces</s></a>
-						</li>
-						<li>
-							<a href="/statics/guided/moj"><s>Method of Joints</s></a>
-						</li>
-						<li>
-							<a href="/statics/guided/mos"><s>Method of Sections</s></a>
-						</li>
-						<li>
-							<a href="/statics/guided/cf"><s>Complex Frames</s></a>
-						</li>
-					</ul>
-				</li> -->
 			</ul>
 		</li>
 
 		<li class="strength">
 			<a href="/strength"><s>Strength</s></a>
-			<!-- <ul>
-				<li><a href="/strength/guided"><s>Guided Practice</s></a></li>
-				<li><a href="/strength/tables"><s>Tables & Formul&aelig;</s></a></li>
-			</ul> -->
 		</li>
 
 		<li class="fluids">
 			<a href="/fluids">Fluids/Water</a>
 			<ul>
-				<!-- <li><a href="/fluids/guided"><s>Guided Practice</s></a></li> -->
 				<li>
 					<a href="/fluids/calcs" class="hasSub">Calculators </a>
 					<ul>
-						<!-- <li><a href="/fluids/calcs/hw">Hazen-Williams</a></li> -->
 						<li>
-							<a href="/fluids/calcs/openChannel">Open 		Channel<br />Under construction<br />Double click alternative below<br/>Back up soon!</a
-							>
+							<a href="/fluids/calcs/openChannel">Open Channel Flow</a>
 						</li>
-						<li><a href="/fluids/calcs/toast">Toast</a></li>
 					</ul>
 				</li>
-
-				<!-- <li>
-					<a href="/fluids/tables"><s>Tables & Formul&aelig;</s></a>
-				</li> -->
 			</ul>
 		</li>
 		<li class="misc">
@@ -115,7 +84,9 @@
 							<a href="/misc/math/numberTheory/">(a little) Number Theory</a>
 							<ul>
 								<li>
-									<a href="/misc/math/numberTheory/01gettingStarted"> 01 Getting Started </a>
+									<a href="/misc/math/numberTheory/01gettingStarted">
+										01 Getting Started
+									</a>
 								</li>
 							</ul>
 						</li>

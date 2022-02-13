@@ -1,82 +1,65 @@
 <script>
-	// import katex from 'katex';
-	// import renderMathInElement from 'katex/dist/contrib/auto-render.js';
-	import DropDown from '$lib/fluids/calcs/DropDown.svelte';
 	import { onMount } from 'svelte';
-	let c = 4;
-
-	let katexify = (e) => {
-		console.log("event: "+e)
-		renderMathInElement(document.body, {
-			delimiters: [
-				{
-					left: '$$',
-					right: '$$',
-					display: true
-				},
-				{
-					left: '\\[',
-					right: '\\]',
-					display: true
-				},
-				{
-					left: '!$',
-					right: '!$',
-					display: false
-				},
-				{
-					left: '\\(',
-					right: '\\)',
-					display: false
-				}
-			],
-			throwOnError: false
-		});
-	};
+	import DDprops from './DDprops.svelte';
+	import Intro from './Intro.svelte';
+	let katexify;
 
 	onMount(() => {
-		// document.addEventListener('DOMContentLoaded', katexify);
-		document.addEventListener('click', katexify);
-		document.addEventListener('input', katexify);
-		document.addEventListener('change', katexify);
+		katexify = () => {
+			renderMathInElement(document.body, {
+				delimiters: [
+					{
+						left: '$$',
+						right: '$$',
+						display: true
+					},
+					{
+						left: '!$',
+						right: '!$',
+						display: false
+					},
+					{
+						left: '\\[',
+						right: '\\]',
+						display: true
+					},
+					{
+						left: '\\(',
+						right: '\\)',
+						display: false
+					}
+				]
+			});
+		};
+
 		katexify();
 	});
+
+	let c = 4,
+		typeOfChannel = 'rectangular',
+		specifyY = true;
 </script>
 
-<article>
-	You need to 'escape' the curly braces that Svelte thinks are variables but
-	static \(\KaTeX\) renders fine: \[a=\sqrt &lcub; b^2+c^2 &rcub;\] \( a^2 =
-	b^2+c^2 \) When reading a variable? Not so much. {c}
-	<!-- \[a=\sqrt &lcub; b^2+{c}^2&rcub;\] -->
+<main on:click={katexify}>
+	<Intro {typeOfChannel} />
+
+	<label class="yQlayout">
+		<input type="radio" bind:group={specifyY} value={true} />
+		<span class="radio__label">Specify !$y!$</span>
+	</label>
+
+	<label class="yQlayout">
+		<input type="radio" bind:group={specifyY} value={false} />
+		<span>Specify !$Q!$</span>
+	</label>
 
 	<p>
-		When the math string is in the prop of a component, the variable is read and
-		the math is \(\KaTeX\)ified.
+		<DDprops
+			top="\(a=\sqrt &lcub; b^2+{c}^2 &rcub;\)"
+			drop="\[a=\sqrt &lcub; b^2+{c * c}^&lcub;{c}&rcub; &rcub;\]" />
 	</p>
+</main>
 
-	<p>
-		<DropDown top="\({c}\)" drop="\[a=\sqrt &lcub; b^2+{c}^2 &rcub;\]" />
-	</p>
+<input type="number" step="any" required bind:value={c} on:input={katexify} />
 
-	<p>
-		Change the value of \(c\):
-		<input type="number" step="any" required bind:value={c} />
-	</p>
-</article>
 
-<!-- <svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-		crossorigin="anonymous" />
-</svelte:head> -->
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-		crossorigin="anonymous" />
-
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
-</svelte:head>

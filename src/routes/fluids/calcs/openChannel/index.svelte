@@ -1,73 +1,58 @@
 <script>
-	import Sect from '$lib/numbering/Sect.svelte';
-	import NavButton from './components/NavButton.svelte';
 	import Rectangular from './components/Rectangular.svelte';
-	import Triangular from './components/Triangular.svelte';
-	import Trapezoidal from './components/Trapezoidal.svelte';
-	import Circular from './components/Circular.svelte';
-	import Intro from './components/Intro.svelte';
-	import DropDown from '$lib/fluids/calcs/DropDown.svelte';	
+	import Sect from '$lib/numbering/Sect.svelte';
+	// import { onMount } from 'svelte';
 
-	let current = 'triangular';
+	// let katexify;
+
+	// onMount(() => {
+	// 	katexify = () => {
+	// 		renderMathInElement(document.body, {
+	// 			delimiters: [
+	// 				{
+	// 					left: '$$',
+	// 					right: '$$',
+	// 					display: true
+	// 				},
+	// 				{
+	// 					left: '!$',
+	// 					right: '!$',
+	// 					display: false
+	// 				},
+	// 				{
+	// 					left: '\\[',
+	// 					right: '\\]',
+	// 					display: true
+	// 				},
+	// 				{
+	// 					left: '\\(',
+	// 					right: '\\)',
+	// 					display: false
+	// 				}
+	// 			]
+	// 		});
+	// 	};
+
+	// 	katexify();
+	// });
 </script>
 
-<main>
-	<Sect type="chapter0" center>Open Channel Flow Calculator</Sect>
+<Sect type="chapter0" center>Open Channel Flow Calculator</Sect>
+<Rectangular />
 
-	<div class="navbar">
-		<NavButton bind:current name="rectangular">Rectangular</NavButton>
-		<NavButton bind:current name="trapezoidal">Trapezoidal</NavButton>
-		<NavButton bind:current name="triangular">Triangular</NavButton>
-		<NavButton bind:current name="circular">Circular</NavButton>
-	</div>
-
-	<DropDown>
-		<div slot='top'><Sect type='subsubsection0' center>About...</Sect></div>
-		<div slot='drop'><Intro typeOfChannel={current} /></div>
-	</DropDown>
-	
-
-	<div
-		class:show={current === 'rectangular'}
-		class:hide={current !== 'rectangular'}>
-		<Rectangular />
-	</div>
-	<div
-		class:show={current === 'triangular'}
-		class:hide={current !== 'triangular'}>
-		<Triangular />
-	</div>
-	<div
-		class:show={current === 'trapezoidal'}
-		class:hide={current !== 'trapezoidal'}>
-		<Trapezoidal />
-	</div>
-	<div class:show={current === 'circular'} class:hide={current !== 'circular'}>
-		<Circular />
-	</div>
-</main>
-
-<style>
-	.navbar {
-		display: flex;
-		justify-content: space-evenly;
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-	.show {
-		display: block;
-	}
-	.hide {
-		display: none;
-	}
-</style>
 
 <svelte:head>
 	<link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+		href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
+		integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML"
 		crossorigin="anonymous" />
-
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js"
+		integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/contrib/auto-render.min.js"
+		integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+		crossorigin="anonymous"></script>
 </svelte:head>

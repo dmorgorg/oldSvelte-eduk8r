@@ -1,6 +1,5 @@
 
 export const katexify = () => {
-    console.log('in katexify');
     renderMathInElement(document.body, {
         delimiters: [{
             left: "$$",

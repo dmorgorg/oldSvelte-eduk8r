@@ -1,5 +1,5 @@
 <script>
-	import { fade, slide, fly } from 'svelte/transition';
+	// import { fade, slide, fly } from 'svelte/transition';
 	export let top = '';
 	export let drop = '';
 	let display = false;
@@ -17,19 +17,13 @@
 
 		<button class="display-btn">
 			{#if display}
-				<div
-					class="triangle-up"
-					in:fade={{ duration: 500, delay: 500 }}
-					out:fade={{ duration: 500 }} />
+				<div class="triangle-up" />
 			{:else}
-				<div
-					class="triangle-down"
-					in:fade={{ duration: 500, delay: 500 }}
-					out:fade={{ duration: 500 }} />
+				<div class="triangle-down" />
 			{/if}
 		</button>
 	</div>
-	<br />
+	
 	{#if display}
 		<div class="drop">
 			{@html drop}
@@ -42,7 +36,7 @@
 		background-color: white;
 		border: 1px solid #ccc;
 		margin: 0.5rem;
-		padding: 0.25rem 1rem;
+		padding: 0.5rem 1rem;
 		cursor: pointer;
 		box-shadow: 0 0 0.3em #eee;
 	}
@@ -53,6 +47,9 @@
 	.top {
 		display: flex;
 		justify-content: space-between;
+	}
+	.drop {
+		margin-top: 1em;
 	}
 	.triangle-up {
 		border-bottom: 0.35em solid var(--fluids-primary);
