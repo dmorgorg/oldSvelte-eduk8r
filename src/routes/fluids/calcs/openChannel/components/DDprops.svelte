@@ -35,10 +35,12 @@
 	.card {
 		background-color: white;
 		border: 1px solid #ccc;
-		margin: 0.5rem;
+		margin: 0.25rem 0.5rem;
 		padding: 0.5rem 1rem;
 		cursor: pointer;
 		box-shadow: 0 0 0.3em #eee;
+		/* font-size: 90%; */
+		vertical-align: text-top;
 	}
 	.card:hover {
 		border: 1px solid #ccc;

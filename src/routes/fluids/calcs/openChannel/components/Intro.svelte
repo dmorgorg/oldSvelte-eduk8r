@@ -5,7 +5,7 @@
 <section class='intro'>
 	<p>
 		This calculator is for normal (uniform) flow in an open channel with a
-		{typeOfChannel} cross-section.
+		<strong>{typeOfChannel}</strong> cross-section.
 	</p>
 
 	<p>
@@ -28,7 +28,7 @@
 	<p
 		class:show={typeOfChannel !== 'triangular'}
 		class:hide={typeOfChannel === 'triangular'}>
-		Note that !$ y !$ cannot be determined analytically from !$Q!$ and is found
+		Note that, for a {typeOfChannel} channel, !$ y !$ cannot be determined analytically from !$Q!$ and is found
 		using an iterative method.
 	</p>
 </section>
