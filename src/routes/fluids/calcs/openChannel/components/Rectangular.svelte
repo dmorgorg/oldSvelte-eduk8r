@@ -94,6 +94,7 @@
 
 		b = Number(bs);
 		b = b < 0 ? -b : b;
+		b = b === 0 ? 1 : b;
 		bs = sds(b); // for binding to the input field
 
 		y = Number(ys);
@@ -132,7 +133,7 @@
 </script>
 
 <main 
-	on:load={quickUpdate} on:click={quickUpdate} on:change={quickUpdate} on:input={quickUpdate}>
+	on:click={quickUpdate} on:change={update} >
 	<Intro {typeOfChannel} />
 
 	<section class="yQlayout">
