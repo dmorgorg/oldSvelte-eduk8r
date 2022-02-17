@@ -38,12 +38,14 @@
 
 		while(true){
 			if(typeof katexify === 'function'){
+				quickUpdate();
 				break;
 			}
 		}
 
 		quickUpdate();
-		quickUpdate();
+		// quickUpdate();
+		// window.location.reload(true);
 	});
 
 	let sdigs = 4,
@@ -58,7 +60,7 @@
 		gs = 9.81, g,
 		// QQ, QQs for Q value where Q is specified, not calculated
 		QQs = 3.75, QQ,
-		A, P, R, v, Q, E, T, NF;
+		A, P, R, v, Q, E, T, NF, yc;
 
 	// https://www.freecodecamp.org/news/javascript-debounce-example/
 	function debounce(func, timeout = 1500) {
@@ -130,6 +132,7 @@
 		E = rect.getE(y, v, g);
 		T = rect.getT(b);
 		NF = rect.getNF(v, g, A, T);
+		yc = rect.getYc(Q, g, b);
 	}
 
 	calculate();
@@ -143,7 +146,7 @@
 </script>
 
 <main 
-	on:click={quickUpdate} on:change={update} >
+	 on:click={quickUpdate} on:change={update} on:input={update} >
 	<Intro {typeOfChannel} />
 
 	<section class="yQlayout">
@@ -351,6 +354,22 @@
 					$$" />
 
 				<Sect type="subsection0" center>Critical Flow</Sect>
+
+				<DDprops
+					top="<span class='lowbold'>For the flow of </span> !$ \,\, Q = {sdw(Q)} \,\mathsf&lcub; m^3\!/s &rcub;, \,  !$<span class='lowbold'> the critical depth </span>!$\,y_c= {sds(yc)}\,\mathsf m!$"
+					drop="Under critical conditions, $$
+					\begin&lcub;aligned&rcub;
+						N_F &= 1 \\
+						\Rightarrow v_c &= \sqrt &lcub; g\left(A_c/T_c\right) &rcub; \\
+						\Rightarrow \frac &lcub Q_c &rcub; &lcub; A_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
+						\Rightarrow \frac &lcub Q_c &rcub; &lcub; b\cdot y_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
+						\Rightarrow \frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot y_c^2 &rcub; &=  g\cdot y_c \\
+						\Rightarrow y_c^3 &= \frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot g &rcub;  \\
+						\Rightarrow y_c &= \left[\frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot g &rcub;\right]^&lcub; 1/3 &rcub;  \\
+						\Rightarrow y_c &= \left[\frac &lcub \left({sdw(Q)}\,\mathsf&lcub;m^3\!/s&rcub;\right)^2 &rcub; &lcub; \left({sds(b)}\,\mathsf m\right)^2\left( {sds(g)}\,\mathsf&lcub;m/s^2&rcub; \right)&rcub;\right]^&lcub; 1/3 &rcub;  \\
+						\Rightarrow y_c &= {sdw(yc)}\,\mathsf m
+					\end&lcub;aligned&rcub;
+					$$" />
 			{/if}
 		{/if}
 	</section>
