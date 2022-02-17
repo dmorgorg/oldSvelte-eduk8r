@@ -43,6 +43,7 @@
 		}
 
 		quickUpdate();
+		quickUpdate();
 	});
 
 	let sdigs = 4,
