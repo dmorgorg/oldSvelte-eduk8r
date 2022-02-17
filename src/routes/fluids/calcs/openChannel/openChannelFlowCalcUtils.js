@@ -7,11 +7,25 @@ export const rect = {
     sdw: function (n) {
         return n.toPrecision(rect.wdigs);
     },
+    // https://www.freecodecamp.org/news/javascript-debounce-example/
+    debounce: function (func, timeout = 1500) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, timeout);
+        };
+    },
+    delayK: function () {
+        rect.debounce(katexify, 100);
+    },
+   
     getA: function (b, y) {
-        return Number(b * y);
+        return Number(rect.sdw(b * y));
     },
     getP: function (b, y) {
-        return Number(b + 2 * y);
+        return Number(rect.sdw(b + 2 * y));
     },
     getR: function (b, y) {
         return Number(rect.sdw(rect.getA(b, y)) / Number(rect.getP(b, y)));
@@ -21,5 +35,17 @@ export const rect = {
     },
     getQfromVnA: function (v, A) {
         return Number(rect.sdw(v * A));
+    },
+    getE: function (y, v, g) {
+        return Number(rect.sdw(y + v ** 2 / g / 2));
+    },
+    getT: function (b) {
+        return Number(rect.sds(b));
+    },
+    getNF: function (v, g, A, T) {
+        return Number(rect.sdw(v / ((g * A) / T) ** 0.5));
+    },
+    getYc: function (Q, g, b) {
+        return Number(rect.sdw((Q * Q) / g / b / b) ** (1 / 3));
     }
 }

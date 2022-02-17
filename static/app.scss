@@ -24,7 +24,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(14px, 1.5vw, 24px);
+    font-size: clamp(14px, 1.25vw, 24px);
 }
 
 body {
@@ -135,28 +135,35 @@ main {
     color: var(--fluids-primary);
     font-weight: bold;
     vertical-align: middle;
-    padding-top: 0.06em;
-    font-size: 105%;
+    padding-top: 0.04em;
+    font-size: 1.1em;
 }
 
 label.b .katex,
 label.y .katex,
 label.Q .katex {
-    font-size: 100%;
+    font-size: 1.2em;
 }
 
 .card .top .katex {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
-
 .card .drop .katex {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
-section .intro .katex {
-    font-size: 50%;
-    color: red;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
 
 section.yQlayout {
     display: flex;
@@ -168,14 +175,13 @@ section.yQlayout {
     width: 0;
     height: 0;
 }
-
 .yQlayout input[type='radio']+*::before {
     content: '';
     color: white;
     display: inline-block;
     vertical-align: middle;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
     margin-right: 0.5rem;
     border-radius: 0.4rem;
     border-style: solid;
@@ -187,7 +193,6 @@ section.yQlayout {
 .yQlayout input[type='radio']:checked+*::before {
     background-color: var(--fluids-primary);
 }
-
 .yQlayout input[type='radio'] {
     margin: 1em 2em;
 }

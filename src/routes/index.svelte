@@ -99,7 +99,7 @@
 
 <style>
 	nav {
-		width: 90%;
+		width: 70%;
 		margin: -5em auto 0 auto;
 		display: flex;
 		justify-content: flex-end;
@@ -108,7 +108,7 @@
 		height: 80vh;
 		padding: 0;
 		font-family: 'Happy Monkey', cursive;
-		/* border: 1px solid green; */
+		border: 1px solid green;
 	}
 	li {
 		position: relative;

@@ -39,7 +39,7 @@
 		padding: 0.5rem 1rem;
 		cursor: pointer;
 		box-shadow: 0 0 0.3em #eee;
-		/* font-size: 90%; */
+		font-size: 90%;
 		vertical-align: text-top;
 	}
 	.card:hover {
