@@ -35,7 +35,14 @@
 				]
 			});
 		};
-		update();
+
+		while(true){
+			if(typeof katexify === 'function'){
+				break;
+			}
+		}
+
+		quickUpdate();
 	});
 
 	let sdigs = 4,
@@ -50,7 +57,7 @@
 		gs = 9.81, g,
 		// QQ, QQs for Q value where Q is specified, not calculated
 		QQs = 3.75, QQ,
-		A, P, R, v, Q, E;
+		A, P, R, v, Q, E, T, NF;
 
 	// https://www.freecodecamp.org/news/javascript-debounce-example/
 	function debounce(func, timeout = 1500) {
@@ -120,6 +127,8 @@
 		v = rect.getManningsV(n, R, s);
 		Q = rect.getQfromVnA(v, A);
 		E = rect.getE(y, v, g);
+		T = rect.getT(b);
+		NF = rect.getNF(v, g, A, T);
 	}
 
 	calculate();
@@ -172,7 +181,7 @@
 						required
 						bind:value={bs}
 						on:input={update} />
-					!$\mathsf&lbrace;m&rbrace;!$
+					!$\mathsf m !$
 				</label>
 
 				{#if specifyY}
@@ -184,7 +193,7 @@
 							required
 							bind:value={ys}
 							on:input={update} />
-						!$\mathsf&lbrace;m&rbrace;!$
+						!$\mathsf m !$
 					</label>
 				{:else}
 					<label class="Q">
@@ -195,7 +204,7 @@
 							required
 							bind:value={QQs}
 							on:input={update} />
-						!$\mathsf&lbrace;m^3\!/s&rbrace;!$
+						!$\mathsf&lcub;m^3\!/s&rcub;!$
 					</label>
 				{/if}
 			</form>
@@ -220,7 +229,7 @@
 					required
 					bind:value={ns}
 					on:input={update} />
-				!$\small \mathsf &lbrace; s/m^&lbrace;1/3&rbrace; &rbrace; !$
+				!$\small \mathsf &lcub; s/m^&lcub;1/3&rcub; &rcub; !$
 			</div>
 			<div class="g">
 				!$g=!$
@@ -230,7 +239,7 @@
 					required
 					bind:value={gs}
 					on:input={update} />
-				!$\small \mathsf &lbrace; m/s^2 &rbrace; !$
+				!$\small \mathsf &lcub; m/s^2 &rcub; !$
 			</div>
 		</form>
 	</section>
@@ -260,7 +269,7 @@
 						\begin&lcub;aligned&rcub;
 							A &= b\cdot y \\
 							&= {sds(b)}\textsf &lcub; m &rcub;\times {sds(y)}\textsf m\\
-							&= {sdw(A)} \,\mathsf&lbrace;m^2&rbrace;
+							&= {sdw(A)} \,\mathsf&lcub;m^2&rcub;
 						\end&lcub;aligned&rcub;
 						$$" />
 
@@ -271,54 +280,73 @@
 						\begin&lcub;aligned&rcub;
 							P &= b+2y \\
 							&= {sds(b)}\textsf &lcub; m &rcub; +2\times {sds(y)}\textsf &lcub; m &rcub;\\
-							&= {sdw(P)} \,\mathsf&lbrace;m&rbrace;
-						\end&lbrace;aligned&rbrace;
+							&= {sdw(P)} \,\mathsf&lcub;m&rcub;
+						\end&lcub;aligned&rcub;
 						$$" />
 
 				<DDprops
 					top="<span class='lowbold'>Hydraulic Radius:</span>
 					!$\quad R = {sds(R)}\, \mathsf m !$"
 					drop="$$
-					\begin&lbrace;aligned&rbrace;
+					\begin&lcub;aligned&rcub;
 						R &= A/P \\
 						&= {sdw(A)}\; \mathsf&lcub; m^2 &rcub;/{sdw(P)}\;\textsf m \\
 						&= {sdw(R)} \;\mathsf m
-					\end&lbrace;aligned&rbrace;
+					\end&lcub;aligned&rcub;
 					$$" />
 
 				<DDprops
 					top="<span class='lowbold'>Average Flow Velocity:</span>
-					!$\quad v = {sds(v)}\, \mathsf &lbrace; m/s &rbrace; !$"
+					!$\quad v = {sds(v)}\, \mathsf &lcub; m/s &rcub; !$"
 					drop="$$
-					\begin&lbrace;aligned&rbrace;
-						v &= \frac 1n R^&lbrace 2/3 &rbrace;S^&lbrace 1/2 &rbrace; \\
-						&= \frac 1&lbrace; {sds(n)}&rbrace; ({sdw(R)})^&lbrace 2/3 &rbrace;({sds(
+					\begin&lcub;aligned&rcub;
+						v &= \frac 1n R^&lbrace 2/3 &rcub;S^&lbrace 1/2 &rcub; \\
+						&= \frac 1&lcub; {sds(n)}&rcub; ({sdw(R)})^&lbrace 2/3 &rcub;({sds(
 						s
 					)} / 100
-					)^&lbrace; 1/2 &rbrace; \\
-						&= {sdw(v)} \,\mathsf&lbrace;m/s&rbrace;
-					\end&lbrace;aligned&rbrace;	
+					)^&lcub; 1/2 &rcub; \\
+						&= {sdw(v)} \,\mathsf&lcub;m/s&rcub;
+					\end&lcub;aligned&rcub;	
 					$$" />
 
 				<DDprops
 					top="<span class='lowbold'>Flow Rate:</span>
-					!$\quad Q = {sds(Q)}\,\mathsf &lbrace; m^3\!/s &rbrace !$"
+					!$\quad Q = {sds(Q)}\,\mathsf &lcub; m^3\!/s &rbrace !$"
 					drop="$$
-					\begin&lbrace;aligned&rbrace;
+					\begin&lcub;aligned&rcub;
 						Q &= Av \\
 						&= {sdw(A)}\;\mathsf&lcub;m^2&rcub; \times{sdw(v)}\;\mathsf&lcub;m/s&rcub; \\
-						&= {sdw(Q)} \,\mathsf&lbrace;m^3\!/s&rbrace;
-					\end&lbrace;aligned&rbrace;	
+						&= {sdw(Q)} \,\mathsf&lcub;m^3\!/s&rcub;
+					\end&lcub;aligned&rcub;	
 					$$" />
 
 				<DDprops
 					top="<span class='lowbold'>Specific Energy:</span> !$ \quad E = {sds(E)} \,\mathsf m !$"
 					drop="$$
-					\begin&lbrace;aligned&rbrace;
+					\begin&lcub;aligned&rcub;
 						Q &= Av \\
 						&= {sdw(A)}\;\mathsf&lcub;m^2&rcub; \times{sdw(v)}\;\mathsf&lcub;m/s&rcub; \\
-						&= {sdw(Q)} \,\mathsf&lbrace;m^3\!/s&rbrace;
-					\end&lbrace;aligned&rbrace;	
+						&= {sdw(Q)} \,\mathsf&lcub;m^3\!/s&rcub;
+					\end&lcub;aligned&rcub;	
+					$$" />
+
+				<DDprops
+					top="<span class='lowbold'>Free Surface:</span> !$ \quad T = {sds(T)}\, \mathsf &lcub; m &rcub;  !$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+							T &= b\\							
+							&= {sds(T)}\,\mathsf m 
+						\end&lcub;aligned&rcub;
+					$$" />
+
+				<DDprops
+					top="<span class='lowbold'>Froude Number: </span> !$ \quad N_F = {sds(NF)}   !$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+						N_F &=  \frac&lcub;v &rcub;&lcub;\sqrt&lcub;g(A/T)&rcub;&rcub; \\
+						&=  \frac&lcub;{v}\,\mathsf&lcub; m/s &rcub;&rcub;&lcub;\sqrt&lcub;\left({g}\,\mathsf&lcub; m/s^2 &rcub;\right)({sdw(A)}\,\mathsf&lcub; m^2 &rcub;/{sds(T)}\,\mathsf m)&rcub;&rcub; \\
+						&= {sdw(NF)}
+					\end&lcub;aligned&rcub;
 					$$" />
 
 				<Sect type="subsection0" center>Critical Flow</Sect>
