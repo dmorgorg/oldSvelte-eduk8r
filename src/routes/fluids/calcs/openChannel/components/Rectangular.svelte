@@ -35,7 +35,7 @@
 				]
 			});
 		};
-		quickUpdate();
+		update();
 	});
 
 	let sdigs = 4,
