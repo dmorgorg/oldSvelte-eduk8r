@@ -47,5 +47,8 @@ export const rect = {
     },
     getYc: function (Q, g, b) {
         return Number(rect.sdw((Q * Q) / g / b / b) ** (1 / 3));
+    },
+    getV: function (Q, b, y) {
+        return Number(rect.sdw(Q / b / y));
     }
 }

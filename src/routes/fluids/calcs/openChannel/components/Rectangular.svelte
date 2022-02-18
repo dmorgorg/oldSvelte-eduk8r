@@ -36,14 +36,14 @@
 			});
 		};
 
-		while(true){
-			if(typeof katexify === 'function'){
-				quickUpdate();
-				break;
-			}
-		}
+		// while(true){
+		// 	if(typeof katexify === 'function'){
+		// 		update();
+		// 		break;
+		// 	}
+		// }
 
-		quickUpdate();
+		update();
 		// quickUpdate();
 		// window.location.reload(true);
 	});
@@ -60,7 +60,7 @@
 		gs = 9.81, g,
 		// QQ, QQs for Q value where Q is specified, not calculated
 		QQs = 3.75, QQ,
-		A, P, R, v, Q, E, T, NF, yc;
+		A, P, R, v, Q, E, T, NF, yc, Ac, vc, Emin, Rc, Sc;
 
 	// https://www.freecodecamp.org/news/javascript-debounce-example/
 	function debounce(func, timeout = 1500) {
@@ -133,6 +133,10 @@
 		T = rect.getT(b);
 		NF = rect.getNF(v, g, A, T);
 		yc = rect.getYc(Q, g, b);
+		Ac = rect.getA(b, yc);
+		vc = rect.getV(Q, b, yc);
+		Emin = rect.getE(yc, vc, g);
+		// Sc = rect.getSlope(n, vc, Rc);
 	}
 
 	calculate();
@@ -146,7 +150,9 @@
 </script>
 
 <main 
-	 on:click={quickUpdate} on:change={update} on:input={update} >
+	 on:click={quickUpdate} on:change={quickUpdate} on:input={update}
+	 in:fade={{ duration: 2250 }} out:fade={{ duration: 750 }} >
+
 	<Intro {typeOfChannel} />
 
 	<section class="yQlayout">
@@ -370,6 +376,41 @@
 						\Rightarrow y_c &= {sdw(yc)}\,\mathsf m
 					\end&lcub;aligned&rcub;
 					$$" />
+
+				<DDprops
+					top="<span class='lowbold'>Critical Velocity:  </span> !$ \quad v_c = {sds(vc	)}  \,\mathsf&lbrace;m/s&rbrace;    !$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+						A_c &= b\cdot y_c \\
+								&= ({sds(b)}\,\mathsf m)\cdot ({sdw(yc)}\,\mathsf m) \\
+								&= {sdw(Ac)} \,\mathsf&lbrace;m^2&rbrace;\\\\
+								v_c &= Q/A_c \\
+								&= ({sdw(Q)}\,\mathsf &lcub m^3\!/s &rcub; )/({sdw(Ac)}\,\mathsf &lcub; m^2 &rcub;) \\
+								&= {sdw(vc)} \,\mathsf&lbrace;m/s&rbrace;
+					\end&lcub;aligned&rcub;
+					$$" />
+
+				<!-- <DDprops
+					top="<span class='lowbold'>Minimum Specific Energy:  </span> !$ \quad E_&lbrace;min&rbrace; = {sds(Emin)}\,\mathsf&lbrace;m&rbrace;!$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+						E_&lbrace;min&rbrace; &= y_c+\frac &lbrace; v_c^2 &rbrace;&lbrace; 2g &rbrace; \\
+						&= {sdw(yc)}\,\mathsf m+\frac &lbrace; ({sdw(vc)}\,\mathsf &lcub; m/s &rcub )^2 &rbrace;&lbrace; 2({sds(g)}\,\mathsf &lcub; m/s^2 &rcub;) &rbrace; \\
+						&= {sdw(Emin)} \,\mathsf&lbrace;m&rbrace;
+					\end&lcub;aligned&rcub;
+					$$" />
+
+				<DDprops
+					top="<span class='lowbold'>Hydraulic Radius for Critical Flow:  </span> !$ \quad S_c = {sds(Sc)}\,\mathsf&lbrace;\%&rbrace;!$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+						E_&lbrace;min&rbrace; &= y_c+\frac &lbrace; v_c^2 &rbrace;&lbrace; 2g &rbrace; \\
+						&= {sdw(yc)}\,\mathsf m+\frac &lbrace; ({sdw(vc)}\,\mathsf &lcub; m/s &rcub )^2 &rbrace;&lbrace; 2({sds(g)}\,\mathsf &lcub; m/s^2 &rcub;) &rbrace; \\
+						&= {sdw(Emin)} \,\mathsf&lbrace;m&rbrace;
+					\end&lcub;aligned&rcub;
+					$$" /> -->
+
+
 			{/if}
 		{/if}
 	</section>
