@@ -136,7 +136,8 @@
 		Ac = rect.getA(b, yc);
 		vc = rect.getV(Q, b, yc);
 		Emin = rect.getE(yc, vc, g);
-		// Sc = rect.getSlope(n, vc, Rc);
+		Rc = rect.getR(b, yc);
+		Sc = rect.getCriticalSlope(n, vc, Rc);
 	}
 
 	calculate();
@@ -311,7 +312,7 @@
 					drop="$$
 					\begin&lcub;aligned&rcub;
 						v &= \frac 1n R^&lbrace 2/3 &rcub;S^&lbrace 1/2 &rcub; \\
-						&= \frac 1&lcub; {sds(n)}&rcub; ({sdw(R)})^&lbrace 2/3 &rcub;({sds(
+						&= \frac 1&lcub; {sds(n)}\,\mathsf &lcub; s/m^&lcub 1/3 &rcub; &rcub;&rcub; ({sdw(R)}\,\mathsf m)^&lbrace 2/3 &rcub;({sds(
 						s
 					)} / 100
 					)^&lcub; 1/2 &rcub; \\
@@ -334,9 +335,9 @@
 					top="<span class='lowbold'>Specific Energy:</span> !$ \quad E = {sds(E)} \,\mathsf m !$"
 					drop="$$
 					\begin&lcub;aligned&rcub;
-						Q &= Av \\
-						&= {sdw(A)}\;\mathsf&lcub;m^2&rcub; \times{sdw(v)}\;\mathsf&lcub;m/s&rcub; \\
-						&= {sdw(Q)} \,\mathsf&lcub;m^3\!/s&rcub;
+						E &= y+\frac &lbrace; v^2 &rbrace;&lbrace; 2g &rbrace; \\
+						&= {sds(y)}\,\mathsf m +\frac &lbrace; ({sdw(v)}\,\mathsf &lcub; m/s &rcub;)^2 &rbrace;&lbrace; 2({g}\,\mathsf &lcub; m/s^2 &rcub;) &rbrace; \\
+						&= {sdw(E)}\,\mathsf&lbrace;m&rbrace;
 					\end&lcub;aligned&rcub;	
 					$$" />
 
@@ -367,18 +368,18 @@
 					\begin&lcub;aligned&rcub;
 						N_F &= 1 \\
 						\Rightarrow v_c &= \sqrt &lcub; g\left(A_c/T_c\right) &rcub; \\
-						\Rightarrow \frac &lcub Q_c &rcub; &lcub; A_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
-						\Rightarrow \frac &lcub Q_c &rcub; &lcub; b\cdot y_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
-						\Rightarrow \frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot y_c^2 &rcub; &=  g\cdot y_c \\
-						\Rightarrow y_c^3 &= \frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot g &rcub;  \\
-						\Rightarrow y_c &= \left[\frac &lcub Q_c^2 &rcub; &lcub; b^2\cdot g &rcub;\right]^&lcub; 1/3 &rcub;  \\
+						\Rightarrow \frac &lcub Q &rcub; &lcub; A_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
+						\Rightarrow \frac &lcub Q &rcub; &lcub; b\cdot y_c &rcub; &= \sqrt &lcub; g\cdot y_c &rcub; \\
+						\Rightarrow \frac &lcub Q^2 &rcub; &lcub; b^2\cdot y_c^2 &rcub; &=  g\cdot y_c \\
+						\Rightarrow y_c^3 &= \frac &lcub Q^2 &rcub; &lcub; b^2\cdot g &rcub;  \\
+						\Rightarrow y_c &= \left[\frac &lcub Q^2 &rcub; &lcub; b^2\cdot g &rcub;\right]^&lcub; 1/3 &rcub;  \\
 						\Rightarrow y_c &= \left[\frac &lcub \left({sdw(Q)}\,\mathsf&lcub;m^3\!/s&rcub;\right)^2 &rcub; &lcub; \left({sds(b)}\,\mathsf m\right)^2\left( {sds(g)}\,\mathsf&lcub;m/s^2&rcub; \right)&rcub;\right]^&lcub; 1/3 &rcub;  \\
 						\Rightarrow y_c &= {sdw(yc)}\,\mathsf m
 					\end&lcub;aligned&rcub;
 					$$" />
 
 				<DDprops
-					top="<span class='lowbold'>Critical Velocity:  </span> !$ \quad v_c = {sds(vc	)}  \,\mathsf&lbrace;m/s&rbrace;    !$"
+					top="<span class='lowbold'>Critical Velocity:  </span> !$ \quad v_c = {sds(vc)}  \,\mathsf&lbrace;m/s&rbrace; !$"
 					drop="$$
 					\begin&lcub;aligned&rcub;
 						A_c &= b\cdot y_c \\
@@ -390,7 +391,7 @@
 					\end&lcub;aligned&rcub;
 					$$" />
 
-				<!-- <DDprops
+				<DDprops
 					top="<span class='lowbold'>Minimum Specific Energy:  </span> !$ \quad E_&lbrace;min&rbrace; = {sds(Emin)}\,\mathsf&lbrace;m&rbrace;!$"
 					drop="$$
 					\begin&lcub;aligned&rcub;
@@ -401,14 +402,30 @@
 					$$" />
 
 				<DDprops
-					top="<span class='lowbold'>Hydraulic Radius for Critical Flow:  </span> !$ \quad S_c = {sds(Sc)}\,\mathsf&lbrace;\%&rbrace;!$"
+					top="<span class='lowbold'>Hydraulic Radius for Critical Flow:  </span> !$ \quad R_c = {sds(Rc)}\,\mathsf m!$"
 					drop="$$
 					\begin&lcub;aligned&rcub;
-						E_&lbrace;min&rbrace; &= y_c+\frac &lbrace; v_c^2 &rbrace;&lbrace; 2g &rbrace; \\
-						&= {sdw(yc)}\,\mathsf m+\frac &lbrace; ({sdw(vc)}\,\mathsf &lcub; m/s &rcub )^2 &rbrace;&lbrace; 2({sds(g)}\,\mathsf &lcub; m/s^2 &rcub;) &rbrace; \\
-						&= {sdw(Emin)} \,\mathsf&lbrace;m&rbrace;
+						\begin&lcub;aligned&rcub;
+						R_c &= A_c/P_c \\
+						&= \frac &lcub; b\cdot y_c &rcub; &lcub; b+2y_c  &rcub; \\
+						&= \frac &lcub; ({sds(b)}\,\mathsf m)\cdot ({sdw(yc)}\,\mathsf m) &rcub; &lcub;  ({sds(b)}\,\mathsf m)+2({sdw(yc)}\,\mathsf m)  &rcub; \\
+						&= {sdw(Rc)}\,\mathsf m
 					\end&lcub;aligned&rcub;
-					$$" /> -->
+					\end&lcub;aligned&rcub;
+					$$" /> 
+
+				<DDprops
+					top="<span class='lowbold'>Slope for Critical Flow:  </span> !$ \quad S_c = {sds(Sc)}\,\mathsf \%!$"
+					drop="$$
+					\begin&lcub;aligned&rcub;
+						v_c &= \frac 1n R_c^&lbrace 2/3 &rbrace;S_c^&lbrace 1/2 &rbrace; \\
+						\Rightarrow S_c &= \left[ \frac &lcub; n\cdot v_c &rcub; &lcub; R_c^&lcub; 2/3&rcub; &rcub; \right]^2 \\
+						&= \left[ \frac &lcub; \left({sds(n)}\,\mathsf &lcub; s/m^&lcub; 1/3&rcub;&rcub;\right)\cdot ({sdw(vc)}\,\mathsf&lcub;m/s&rcub; &rcub; &lcub; ({sdw(Rc)}\,\mathsf m)^&lcub; 2/3&rcub; &rcub; \right]^2 \\
+						&= {sdw(Sc/100)} \\
+						&= {sdw(Sc)}\,\mathsf \% \\
+
+					\end&lcub;aligned&rcub;
+					$$" /> 
 
 
 			{/if}
@@ -440,20 +457,22 @@
 		font-size: 1.05em;
 		font-weight: 500;
 		/* color: red; */
+		border: 1px solid var(--fluids-primary);
 	}
 	.lowerInputs {
 		display: flex;
 		justify-content: space-between;
 		/* font-size: 0.9em; */
 	}
-	/* form.lowerInputs div input {
-		font-size: 1.1em;
-	} */
+	
 	label.b {
 		top: 75.5%;
 		left: 35%;
 		background-color: #ccc;
 		padding: 0 0.25em;
+	}
+	label.b input {
+		border: 1px solid black;
 	}
 	label.y {
 		color: white;

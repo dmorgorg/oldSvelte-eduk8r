@@ -20,7 +20,7 @@ export const rect = {
     delayK: function () {
         rect.debounce(katexify, 100);
     },
-   
+
     getA: function (b, y) {
         return Number(rect.sdw(b * y));
     },
@@ -46,9 +46,13 @@ export const rect = {
         return Number(rect.sdw(v / ((g * A) / T) ** 0.5));
     },
     getYc: function (Q, g, b) {
-        return Number(rect.sdw((Q * Q) / g / b / b) ** (1 / 3));
+        return Number(rect.sdw((Q * Q / g / b / b) ** (1 / 3)));
     },
     getV: function (Q, b, y) {
         return Number(rect.sdw(Q / b / y));
+    },
+    getCriticalSlope: function (n, vc, Rc) {
+        return Number(rect.sdw(((n * vc) / Rc ** (2 / 3)) ** 2 * 100));
     }
+
 }
