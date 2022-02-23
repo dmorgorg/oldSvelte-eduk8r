@@ -4,10 +4,21 @@
 	import Comp from './Comp.svelte';
 	import { onMount } from 'svelte';
 	let c = 42;
+    let specifyY = true;
 	
 	let katexify = () => {
 		renderMathInElement(document.body, {
 			delimiters: [
+                {
+					left: '$$',
+					right: '$$',
+					display: true
+				},
+				{
+					left: '!$',
+					right: '!$',
+					display: false
+				},
 				{
 					left: '\\[',
 					right: '\\]',
@@ -28,24 +39,27 @@
 </script>
 
 
-You need to 'escape' the curly braces that Svelte thinks are variables but static \(\KaTeX\) renders fine:
-\[a=\sqrt &lcub; b^2+c^2 &rcub;\]
-When reading a variable? Not so much.
 
-\[a=\sqrt &lcub; b^2+{c}^2 &rcub;\]
 
-<p>
-	When the math string is in the prop of a component, the variable is read and the math is \(\KaTeX\)ified.
-</p>
+<section class="yQlayout">
+	<label>
+		<input type="radio" bind:group={specifyY} value={true} />
+		<span>Specify !$y!$</span>
+	</label>
 
-<p>
-	<Comp content = '\[a=\sqrt &lcub; b^2+{c}^2 &rcub;\]'/>
-</p>
+	<label>
+		<input type="radio" bind:group={specifyY} value={false} />
+		<span>Specify !$Q!$</span>
+	</label>
+</section>
 
-<p>
-	Change the value of \(c\):
-	<input type="number" step="any" required bind:value={c} on:input={katexify} />
-</p>
+{#if specifyY}
+		Y
+{:else}
+		Q
+{/if}
+
+
 
 <svelte:head>
 	<link
