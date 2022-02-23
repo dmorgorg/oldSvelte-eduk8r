@@ -1,8 +1,13 @@
 <script>
 	import katex from 'katex';
 	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
-	import Comp from './Comp.svelte';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import Sect from '$lib/numbering/Sect.svelte';
+	import DDprops from './DDprops.svelte';
+	import Intro from './Intro.svelte';
+	import { rect } from '../openChannelFlowCalcUtils';
+	import Comp from './Comp.svelte';
 	let c = 42;
 	let specifyY = true;
 
@@ -56,24 +61,5 @@
 		Q
 {/if}
 
-<p>
-	When the math string is in the prop of a component, the variable is read and
-	the math is \(\KaTeX\)ified.
-</p>
 
-<p>
-	<Comp content="\[a=\sqrt &lcub; b^2+{c}^2 &rcub;\]" />
-</p>
 
-<p>
-	Change the value of \(c\):
-	<input type="number" step="any" required bind:value={c} on:input={katexify} />
-</p>
-
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-		crossorigin="anonymous" />
-</svelte:head>
