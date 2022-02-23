@@ -286,15 +286,9 @@
 	<input type="number" required bind:value={wdigs} on:input={update} />
 	<br /> -->
 
-	<section class="result">
-		<!-- //////////////////////// FROM y ///////////////////////// -->
+
 		{#if specifyY}
-			specify YYYYYYYYYYYYYYYYYYYY
-		{:else}
-			QQQQQQQQQQQQQQQQQQQQQQQQQq
-		{/if}
-		{#if specifyY}
-		SPECIFYY 
+		
 			{#if !validS}
 				<section>
 					For a slope of !$0!$, there is !$0!$ flow. And, without flow, critical
@@ -514,7 +508,7 @@
 				</section>
 			{/if}
 		{/if}
-	</section>
+	<!-- </section> -->
 </main>
 
 <style>

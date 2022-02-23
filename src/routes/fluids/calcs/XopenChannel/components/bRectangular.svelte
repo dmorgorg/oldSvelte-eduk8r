@@ -1,15 +1,15 @@
 <script>
-	import katex from "katex";
-	import renderMathInElement from "katex/dist/contrib/auto-render.js";
+	import katex from 'katex';
+	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
 	import Comp from './Comp.svelte';
 	import { onMount } from 'svelte';
-	let c = 42;
-    let specifyY = true;
-	
+	let specifyY = true,
+		isValidS = true;
+
 	let katexify = () => {
 		renderMathInElement(document.body, {
 			delimiters: [
-                {
+				{
 					left: '$$',
 					right: '$$',
 					display: true
@@ -32,14 +32,11 @@
 			]
 		});
 	};
-	
+
 	onMount(() => {
 		katexify();
 	});
 </script>
-
-
-
 
 <section class="yQlayout">
 	<label>
@@ -54,18 +51,15 @@
 </section>
 
 {#if specifyY}
-		Y
+	\(Y\)
 {:else}
-		Q
+	\(Q\)
 {/if}
-
-
 
 <svelte:head>
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
 		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-		crossorigin="anonymous"
-	/>
+		crossorigin="anonymous" />
 </svelte:head>

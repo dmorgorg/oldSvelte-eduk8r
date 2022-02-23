@@ -51,9 +51,12 @@
 				<li>
 					<a href="/fluids/calcs" class="hasSub">Calculators </a>
 					<ul>
-						<li>
-							<a href="/fluids/calcs/openChannel">Open Channel Flow</a>
-						</li>
+						<!-- <li>
+							<a href="./static/oc/index.html">Open Channel Flow</a>
+						</li> -->
+						<!-- <li>
+							<a href="/fluids/calcs/openChannel">testing</a>
+						</li> -->
 					</ul>
 				</li>
 			</ul>
