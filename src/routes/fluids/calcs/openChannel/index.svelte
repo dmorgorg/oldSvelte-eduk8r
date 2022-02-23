@@ -8,7 +8,7 @@
 <Rectangular />
 
 
-<svelte:head>
+<!-- <svelte:head>
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
@@ -22,4 +22,4 @@
 		src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/contrib/auto-render.min.js"
 		integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
 		crossorigin="anonymous"></script>
-</svelte:head>
+</svelte:head> -->
